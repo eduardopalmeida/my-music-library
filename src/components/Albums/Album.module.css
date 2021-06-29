@@ -1,0 +1,20 @@
+.album {
+  padding: 1rem;
+  background-color: #cad5e9;
+  /* border: 2px solid #cad5e9;
+  border: brown 15px solid;
+  display: grid; */
+}
+
+.album img {
+  width: 200px;
+  height: 200px;
+}
+
+.album img:hover {
+  opacity: 0.7;
+}
+
+/* .album h1 {
+  font-size: ;
+} */

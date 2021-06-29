@@ -1,0 +1,23 @@
+.quadradoGenero {
+    border: 2px solid #cad5e9;
+    background-color: #cad5e9;
+    padding: 15px;
+  }
+  
+  .quadradoGenero p {
+    text-align: right;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:large;
+    font-weight: bold;
+  }
+  
+  .quadradoGenero img {
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .quadradoGenero img:hover {
+    opacity: 0.7;
+  }

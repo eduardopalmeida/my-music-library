@@ -1,0 +1,90 @@
+{
+    "genres" : {
+        "Electronica" : {
+            "Air" : {
+                "1998" : "Moon Safari",
+                "2004" : "Talkie Walkie",
+                "2012" : "Le Voyage Dans La Lune"
+            },
+            "Kraftwerk" : {
+                "1974" : "Autobahn",
+                "1975" : "Radio-Activity",
+                "1977" : "Trans-Europe-Express"
+            },
+            "Daft Punk" : {
+                "1997" : "Homework",
+                "2001" : "Discovery",
+                "2013" : "Random Access Memories"
+            }
+        },
+        "Jazz" : {
+            "Herbie Hancock" : {
+                "1962" : "Takin' Off",
+                "1965" : "Maiden Voyage",
+                "1973" : "Headhunters"
+            },
+            "Miles Davis" : {
+                "1949" : "Birth of the Cool",
+                "1959" : "Kind of Blue",
+                "1969" : "Bitches Brew"
+            },
+            "Pat Metheny" : {
+                "1976" : "Bright Size Life",
+                "1978" : "Pat Metheny Group",
+                "1984" : "First Circle"
+            }
+        },
+        "Portuguesa" : {
+            "Sérgio Godinho" : {
+                "1971" : "Os Sobreviventes",
+                "1972" : "Pré-Histórias",
+                "1978" : "pano-cru"
+            },
+            "Clã" : {
+                "1997" : "Kazoo",
+                "2000" : "Lustro",
+                "2004" : "Rosa Carne"
+            },
+            "Fausto" : {
+                "1984" : "Por Este Rio Acima",
+                "1989" : "A Preto e Branco",
+                "1999" : "Grande, grande é a viagem"
+            }
+        },
+        "Rock" : {
+            "Led Zeppelin" : {
+                "1969_1" : "Led Zeppelin",
+                "1969_2" : "Led Zeppelin II",
+                "1970" : "Led Zeppelin III"
+            },
+            "The Beatles" : {
+                "1963" : "Please, Please Me",
+                "1967" : "Sgt. Peppers and The Lonely Hearts Club Band",
+                "1969" : "Abbey Road"
+
+            },
+            "The Beach Boys" : {
+                "1963_1" : "Surfer Girl",
+                "1963_2" : "Surfin' USA",
+                "1966" : "Pet Sounds"
+              }
+        },
+        "Soul" : {
+            "Ray Charles" : {
+                "1957" : "Ray Charles",
+                "1959_1" : "The Genius of Ray Charles",
+                "1959_2" : "What'd I Say"
+            },
+            "Al Green" : {
+                "1972_1" : "Let's Stay Together",
+                "1972_2" : "I'm Still In Love With You",
+                "1973" : "Call Me"
+            },
+            "Otis Reding" : {
+                "1965" : "Otis Blue",
+                "1966" : "The Soul Album",
+                "1968" : "The Dock of The Bay"
+            }
+        }
+    }
+}

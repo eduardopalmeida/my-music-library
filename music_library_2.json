@@ -1,0 +1,274 @@
+{
+    "music_library": {
+        "album001" : {
+            "artist" : "Air",
+            "genre"  : "Electronica",
+            "title"  : "Moon Safari",
+            "year"   : "1998"
+        },
+        "album002" : {
+            "artist" : "Air",
+            "genre"  : "Electronica",
+            "title"  : "Talkie Walkie",
+            "year"   : "2004"
+        },
+        "album003" : {
+            "artist" : "Air",
+            "genre"  : "Electronica",
+            "title"  : "Le Voyage Dans La Lune",
+            "year"   : "2012"
+        },
+        "album004" : {
+            "artist" : "Kraftwerk",
+            "genre"  : "Electronica",
+            "title"  : "Autobahn",
+            "year"   : "1974"
+        },
+        "album005" : {
+            "artist" : "Kraftwerk",
+            "genre"  : "Electronica",
+            "title"  : "Radio-Activity",
+            "year"   : "1975"
+        },
+        "album006" : {
+            "artist" : "Kraftwerk",
+            "genre"  : "Electronica",
+            "title"  : "Trans-Europe-Express",
+            "year"   : "1977"
+        },
+        "album007" : {
+            "artist" : "Daft Punk",
+            "genre"  : "Electronica",
+            "title"  : "Homework",
+            "year"   : "1997"
+        },
+        "album008" : {
+            "artist" : "Daft Punk",
+            "genre"  : "Electronica",
+            "title"  : "Discovery",
+            "year"   : "2001"
+        },
+        "album009" : {
+            "artist" : "Daft Punk",
+            "genre"  : "Electronica",
+            "title"  : "Random Access Memories",
+            "year"   : "2013"
+        },
+        "album010" : {
+            "artist" : "Herbie Hancock",
+            "genre"  : "Jazz",
+            "title"  : "Takin' Off",
+            "year"   : "1962"
+        },
+        "album011" : {
+            "artist" : "Herbie Hancock",
+            "genre"  : "Jazz",
+            "title"  : "Maiden Voyage",
+            "year"   : "1965"
+        },
+        "album012" : {
+            "artist" : "Herbie Hancock",
+            "genre"  : "Jazz",
+            "title"  : "Headhunters",
+            "year"   : "1973"
+        },
+        "album013" : {
+            "artist" : "Miles Davis",
+            "genre"  : "Jazz",
+            "title"  : "Birth of the Cool",
+            "year"   : "1949"
+        },
+        "album014" : {
+            "artist" : "Miles Davis",
+            "genre"  : "Jazz",
+            "title"  : "Kind of Blue",
+            "year"   : "1959"
+        },
+        "album015" : {
+            "artist" : "Miles Davis",
+            "genre"  : "Jazz",
+            "title"  : "Bitches Brew",
+            "year"   : "1969"
+        },
+        "album016" : {
+            "artist" : "Pat Metheny",
+            "genre"  : "Jazz",
+            "title"  : "Bright Size Life",
+            "year"   : "1976"
+        },
+        "album017" : {
+            "artist" : "Pat Metheny",
+            "genre"  : "Jazz",
+            "title"  : "Pat Metheny Group",
+            "year"   : "1978"
+        },
+        "album018" : {
+            "artist" : "Pat Metheny",
+            "genre"  : "Jazz",
+            "title"  : "First Circle",
+            "year"   : "1984"
+        },
+        "album019" : {
+            "artist" : "Sérgio Godinho",
+            "genre"  : "Portuguesa",
+            "title"  : "Os Sobreviventes",
+            "year"   : "1971"
+        },
+        "album020" : {
+            "artist" : "Sérgio Godinho",
+            "genre"  : "Portuguesa",
+            "title"  : "Pré-Histórias",
+            "year"   : "1972"
+        },
+        "album021" : {
+            "artist" : "Sérgio Godinho",
+            "genre"  : "Portuguesa",
+            "title"  : "pano-cru",
+            "year"   : "1978"
+        },
+        "album022" : {
+            "artist" : "Clã",
+            "genre"  : "Portuguesa",
+            "title"  : "Kazoo",
+            "year"   : "1997"
+        },
+        "album023" : {
+            "artist" : "Clã",
+            "genre"  : "Portuguesa",
+            "title"  : "Lustro",
+            "year"   : "2000"
+        },
+        "album024" : {
+            "artist" : "Clã",
+            "genre"  : "Portuguesa",
+            "title"  : "Rosa Carne",
+            "year"   : "2004"
+        },
+        "album025" : {
+            "artist" : "Fausto",
+            "genre"  : "Portuguesa",
+            "title"  : "Por Este Rio Acima",
+            "year"   : "1984"
+        },
+        "album026" : {
+            "artist" : "Fausto",
+            "genre"  : "Portuguesa",
+            "title"  : "A Preto e Branco",
+            "year"   : "1989"
+        },
+        "album027" : {
+            "artist" : "Fausto",
+            "genre"  : "Portuguesa",
+            "title"  : "Grande, grande é a viagem",
+            "year"   : "1999"
+        },
+        "album028" : {
+            "artist" : "Led Zeppelin",
+            "genre"  : "Rock",
+            "title"  : "Led Zeppelin",
+            "year"   : "1969_1"
+        },
+        "album029" : {
+            "artist" : "Led Zeppelin",
+            "genre"  : "Rock",
+            "title"  : "Led Zeppelin II",
+            "year"   : "1969_2"
+        },
+        "album030" : {
+            "artist" : "Led Zeppelin",
+            "genre"  : "Rock",
+            "title"  : "Led Zeppelin III",
+            "year"   : "1970"
+        },
+        "album031" : {
+            "artist" : "The Beatles",
+            "genre"  : "Rock",
+            "title"  : "Please, Please Me",
+            "year"   : "1963"
+        },
+        "album032" : {
+            "artist" : "The Beatles",
+            "genre"  : "Rock",
+            "title"  : "Sgt. Peppers and The Lonely Hearts Club Band",
+            "year"   : "1967"
+        },
+        "album033" : {
+            "artist" : "The Beatles",
+            "genre"  : "Rock",
+            "title"  : "Abbey Road",
+            "year"   : "1969"
+        },
+        "album034" : {
+            "artist" : "The Beach Boys",
+            "genre"  : "Rock",
+            "title"  : "Surfer Girl",
+            "year"   : "1963_1"
+        },
+        "album035" : {
+            "artist" : "The Beach Boys",
+            "genre"  : "Rock",
+            "title"  : "Surfin' USA",
+            "year"   : "1963_2"
+        },
+        "album036" : {
+            "artist" : "The Beach Boys",
+            "genre"  : "Rock",
+            "title"  : "Pet Sounds",
+            "year"   : "1966"
+        },
+        "album037" : {
+            "artist" : "Ray Charles",
+            "genre"  : "Soul",
+            "title"  : "Ray Charles",
+            "year"   : "1957"
+        },
+        "album038" : {
+            "artist" : "Ray Charles",
+            "genre"  : "Soul",
+            "title"  : "The Genius of Ray Charles",
+            "year"   : "1959_1"
+        },
+        "album039" : {
+            "artist" : "Ray Charles",
+            "genre"  : "Soul",
+            "title"  : "What'd I Say",
+            "year"   : "1959_2"
+        },
+        "album040" : {
+            "artist" : "Al Green",
+            "genre"  : "Soul",
+            "title"  : "Let's Stay Together",
+            "year"   : "1972_1"
+        },
+        "album041" : {
+            "artist" : "Al Green",
+            "genre"  : "Soul",
+            "title"  : "I'm Still In Love With You",
+            "year"   : "1972_2"
+        },
+        "album042" : {
+            "artist" : "Al Green",
+            "genre"  : "Soul",
+            "title"  : "Call Me",
+            "year"   : "1973"
+        },
+        "album043" : {
+            "artist" : "Otis Reding",
+            "genre"  : "Soul",
+            "title"  : "Otis Blue",
+            "year"   : "1965"
+        },
+        "album044" : {
+            "artist" : "Otis Reding",
+            "genre"  : "Soul",
+            "title"  : "The Soul Album",
+            "year"   : "1966"
+        },
+        "album045" : {
+            "artist" : "Otis Reding",
+            "genre"  : "Soul",
+            "title"  : "The Dock of The Bay",
+            "year"   : "1968"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "genres" : {
+    "Electronica" : {
+      "Air" : {
+        "1997" : "Moon Safari",
+        "2001" : "Talkie Walkie"
+      }
+    },
+    "Jazz" : {
+      "Herbie Hancock" : {
+        "1962" : "Takin' Off"
+      },
+      "Miles Davis" : {
+        "1959" : "Kind of Blue"
+      }
+    }
+  }
+}

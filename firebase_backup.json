@@ -1,0 +1,301 @@
+{
+  "artists" : {
+    "a001" : "Herbie Hancock",
+    "a010" : "Air",
+    "a011" : "Kraftwerk",
+    "a012" : "Daft Punk",
+    "a013" : "Sérgio Godinho",
+    "a014" : "José Afonso",
+    "a015" : "Fausto",
+    "a002" : "Miles Davis",
+    "a003" : "Pat Metheny",
+    "a004" : "Led Zeppelin",
+    "a005" : "The Beatles",
+    "a006" : "The Beach Boys",
+    "a007" : "Ray Charles",
+    "a008" : "Al Green",
+    "a009" : "Otis Reding"
+  },
+  "comments" : {
+    "-Mac8C2hlu6egamRHjP4" : {
+      "-MacNr_y_9n84JJ0hey_" : {
+        "text" : "hehehe"
+      },
+      "-MaiN85oSwlPnAGd5Nmy" : {
+        "text" : "Uau!\n"
+      }
+    },
+    "-Mail5jt8-Y3BE-JLR7O" : {
+      "-Mailbluok0eHcIysH45" : {
+        "text" : "Fogo, que honra ter tais palavras dedicadas à minha pessoa! ☺️"
+      }
+    }
+  },
+  "data" : {
+    "cartItems" : [ {
+      "id" : "ci1",
+      "price" : 6,
+      "quantity" : 9,
+      "title" : "Test item",
+      "total" : 54
+    }, {
+      "id" : "ci2",
+      "price" : 2,
+      "quantity" : 5,
+      "title" : "Batatas Fritas",
+      "total" : 10
+    }, {
+      "id" : "ci3",
+      "price" : 1,
+      "quantity" : 1,
+      "title" : "Mentos",
+      "total" : 1
+    }, {
+      "id" : "ci4",
+      "price" : 1.5,
+      "quantity" : 7,
+      "title" : "Cheetos",
+      "total" : 10.5
+    } ],
+    "cartNumItems" : 4,
+    "cartTotalAmount" : 75.5,
+    "changed" : true,
+    "products" : [ {
+      "description" : "This is a first product - amazing!",
+      "id" : "ci1",
+      "price" : 6,
+      "title" : "Test item"
+    }, {
+      "description" : "delicious",
+      "id" : "ci2",
+      "price" : 2,
+      "title" : "Batatas Fritas"
+    }, {
+      "description" : "refreshing and bombastic",
+      "id" : "ci3",
+      "price" : 1,
+      "title" : "Mentos"
+    }, {
+      "description" : "Matutano number 1",
+      "id" : "ci4",
+      "price" : 1.5,
+      "title" : "Cheetos"
+    }, {
+      "description" : "Matutano number 2",
+      "id" : "ci5",
+      "price" : 1.5,
+      "title" : "Fritos"
+    }, {
+      "description" : "Matutano number 3",
+      "id" : "ci6",
+      "price" : 1.5,
+      "title" : "Ruffles"
+    } ]
+  },
+  "genres" : {
+    "g001" : "Jazz",
+    "g002" : "Rock",
+    "g003" : "Soul",
+    "g004" : "Electronica",
+    "g005" : "Portuguesa"
+  },
+  "meals" : {
+    "m1" : {
+      "description" : "Finest fish and veggies",
+      "name" : "Sushi",
+      "price" : 22.99
+    },
+    "m2" : {
+      "description" : "A german specialty!",
+      "name" : "Schnitzel",
+      "price" : 16.5
+    },
+    "m3" : {
+      "description" : "American, raw, meaty",
+      "name" : "Barbecue Burger",
+      "price" : 12.9
+    },
+    "m4" : {
+      "description" : "Healthy...and green...",
+      "name" : "Green Bowl",
+      "price" : 18.99
+    }
+  },
+  "movies" : {
+    "-M_Mfaqn4iPmT9Mdgmbs" : {
+      "openingText" : "In 1935, Indiana Jones arrives in India, still part of the British Empire, and is asked to find a mystical stone. He then stumbles upon a secret cult committing enslavement and human sacrifices in the catacombs of an ancient palace.",
+      "releaseDate" : "31 August 1984",
+      "title" : "Indiana Jones and the Temple of Doom"
+    },
+    "-M_MhS3yjRgWuGFwNNmJ" : {
+      "openingText" : "In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before Adolf Hitler's Nazis can obtain its awesome powers.",
+      "releaseDate" : " 9 October 1981",
+      "title" : "Indiana Jones and the Raiders of the Lost Ark"
+    },
+    "-M_MheqfuyGan7DgytC5" : {
+      "openingText" : "In 1938, after his father Professor Henry Jones, Sr. goes missing while pursuing the Holy Grail, Professor Henry \"Indiana\" Jones, Jr. finds himself up against Adolf Hitler's Nazis again to stop them from obtaining its powers.",
+      "releaseDate" : "15 September 1989",
+      "title" : "Indiana Jones and the Last Crusade"
+    }
+  },
+  "orders" : {
+    "-M_lHbeRNkO_eoBUX6QY" : {
+      "orderItems" : [ {
+        "amount" : 1,
+        "id" : "m1",
+        "name" : "Sushi",
+        "price" : 22.99
+      }, {
+        "amount" : 1,
+        "id" : "m2",
+        "name" : "Schnitzel",
+        "price" : 16.5
+      } ],
+      "user" : {
+        "city" : "Porto",
+        "name" : "Eduardo Peixoto de Almeida",
+        "postal" : "12345",
+        "street" : "Rua D. João IV n455 1o Andar"
+      }
+    },
+    "-M_lKyIMKtxIQiNx9reO" : {
+      "orderItems" : [ {
+        "amount" : 1,
+        "id" : "m3",
+        "name" : "Barbecue Burger",
+        "price" : 12.9
+      }, {
+        "amount" : 1,
+        "id" : "m4",
+        "name" : "Green Bowl",
+        "price" : 18.99
+      } ],
+      "user" : {
+        "city" : "Porto",
+        "name" : "Eduardo Peixoto de Almeida",
+        "postal" : "54321",
+        "street" : "Rua D. João IV n455 1o Andar"
+      }
+    },
+    "-M_lLq1TOY6ARRBm5s9h" : {
+      "orderItems" : [ {
+        "amount" : 1,
+        "id" : "m2",
+        "name" : "Schnitzel",
+        "price" : 16.5
+      }, {
+        "amount" : 1,
+        "id" : "m3",
+        "name" : "Barbecue Burger",
+        "price" : 12.9
+      } ],
+      "user" : {
+        "city" : "Porto",
+        "name" : "Eduardo Peixoto de Almeida",
+        "postal" : "12345",
+        "street" : "Rua D. João IV n455 1o Andar"
+      }
+    },
+    "-M_lOeEGqLOaPM5MfzS-" : {
+      "orderItems" : [ {
+        "amount" : 1,
+        "id" : "m2",
+        "name" : "Schnitzel",
+        "price" : 16.5
+      }, {
+        "amount" : 1,
+        "id" : "m3",
+        "name" : "Barbecue Burger",
+        "price" : 12.9
+      } ],
+      "user" : {
+        "city" : "Porto",
+        "name" : "Eduardo Peixoto de Almeida",
+        "postal" : "12344",
+        "street" : "Rua D. João IV n455 1o Andar"
+      }
+    },
+    "-M_lOr5vlmmwzkBjXMsZ" : {
+      "orderItems" : [ {
+        "amount" : 1,
+        "id" : "m1",
+        "name" : "Sushi",
+        "price" : 22.99
+      }, {
+        "amount" : 1,
+        "id" : "m2",
+        "name" : "Schnitzel",
+        "price" : 16.5
+      }, {
+        "amount" : 1,
+        "id" : "m3",
+        "name" : "Barbecue Burger",
+        "price" : 12.9
+      } ],
+      "user" : {
+        "city" : "Porto",
+        "name" : "Eduardo Peixoto de Almeida",
+        "postal" : "12332",
+        "street" : "Rua D. João IV n455 1o Andar"
+      }
+    }
+  },
+  "quotes" : {
+    "-Mac7lgpMXrSRLRU77Bu" : {
+      "author" : "Nelson Mandela",
+      "text" : "The greatest glory in living lies not in never falling, but in rising every time we fall."
+    },
+    "-Mac7qbQ8nsVAb2wU8Eg" : {
+      "author" : "Walt Disney",
+      "text" : "The way to get started is to quit talking and begin doing."
+    },
+    "-Mac7v2ou-xpVtVitURh" : {
+      "author" : "Steve Jobs",
+      "text" : "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking."
+    },
+    "-Mac8-29ELKbWRSNiNO-" : {
+      "author" : "Eleanor Roosevelt",
+      "text" : "If life were predictable it would cease to be life, and be without flavor."
+    },
+    "-Mac83ODpmRzPeekfbck" : {
+      "author" : "Oprah Winfrey",
+      "text" : "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough."
+    },
+    "-Mac88QkQujm9LONp5qE" : {
+      "author" : "James Cameron",
+      "text" : "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success."
+    },
+    "-Mac8C2hlu6egamRHjP4" : {
+      "author" : "John Lennon",
+      "text" : "Life is what happens when you're busy making other plans."
+    },
+    "-Mai_MCzvR4jiJXurloU" : {
+      "author" : "Eduardo Pixoto d'Almeida",
+      "text" : "Sara, tu és a coisa mais linda da minha vida."
+    },
+    "-Mail5jt8-Y3BE-JLR7O" : {
+      "author" : "Sara Pereira",
+      "text" : "Eduardo Peixô T'Almeida, és o sol da minha vida "
+    }
+  },
+  "tasks" : {
+    "-M_Q4Ol_lpfRu4v-rNwc" : {
+      "text" : "compras"
+    },
+    "-M_Q4Q6djG2wY19IBY-W" : {
+      "text" : "exercicio"
+    },
+    "-M_Q4SAQqMI3ozJq9ohv" : {
+      "text" : "arrrumar quarto"
+    },
+    "-M_RNA-OW9iI2FcKdZRB" : {
+      "text" : "importante"
+    },
+    "-M_Rb0-JzQF2_0UIy8-f" : {
+      "text" : "manteiga"
+    },
+    "-M_RbDOnjQ9GAknmNffr" : {
+      "text" : "Test"
+    }
+  }
+}

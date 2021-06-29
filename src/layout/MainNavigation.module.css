@@ -1,0 +1,42 @@
+.header {
+    width: 80;
+    height: 5rem;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #365572;
+  }
+  
+  .logo {
+    font-size: 3rem;
+    color: white;
+  }
+  
+  .header h1 {
+    color: white;
+    float: left;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav li {
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+  }
+    
+  .header a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .header a:hover,
+  .header a:active,
+  .header a.active {
+    font-weight: bold;
+  }
