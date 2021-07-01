@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 import classes from './AlbumList.module.css';
 
 const AlbumList = (props) => {
-
-    if(props.artistAlbums) {
-        console.log("artistId :: ", props.artistId);
-    }
-
     return (
         <>
             <ul className={classes.wrapper}>

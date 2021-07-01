@@ -1,56 +1,97 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import LoadingSpinner from '../../UI/LoadingSpinner';
 import Artist from './Artist'
 import classes from './ArtistList.module.css';
 
-const ArtistList = (props) => {
-    const [faces, setFaces] = useState([]);
+const ArtistList = () => {
+    const [artists, setArtists] = useState([]);
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const fetchFaces = useCallback(async () => {
+    const fetchArtists = useCallback(async () => {
         setIsLoading(true);
         setError(null);
 
         try {
-            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/caras.json');
+            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/artists.json');
 
             if(!response.ok) {
                 throw new Error('Something went wrong!')
             }
       
-            const facesTemp = await response.json();
+            const artistsTemp = await response.json();
+            const transformedTemp = [];
 
-            setFaces(facesTemp);
+            for(const key in artistsTemp) {
+
+                const artistObject = {
+                    id : key,
+                    ...artistsTemp[key]
+                }
+
+                transformedTemp.push(artistObject);
+            }
+
+
+            setArtists(transformedTemp);
       
         } catch (error) {
+            setIsLoading(false);
             setError(error.message);
         }
+
+        setIsLoading(false);
 
     }, []);
 
     useEffect(() => {
-        fetchFaces();
-    }, [fetchFaces]);
+        fetchArtists();
+    }, [fetchArtists]);
+
+    if(isLoading) {
+        return (
+            <div className={classes.center}>
+                <LoadingSpinner />
+            </div>
+        )
+    }
+
+    if(error) {
+        return (
+            <div className={classes.center}>
+                <h1>{error}</h1>
+            </div>
+        )
+    }
 
     return (
-        <ul className={classes.wrapper}>
-            {
-                props.artists.map( (artist) => (
-                    <Link
-                        to = {`/artists/${artist.name}`}
-                        key = { artist.name }
-                    >
-                        <Artist 
-                        key  = {artist.key}
-                        name = {artist.name}
-                        img_URL = {faces[artist.name]}
-                        />
-                    </Link>
-                ))
-            }
-        </ul>
+        <>
+            <ul className={classes.wrapper}>
+                {
+                    artists.map( (artist) => (
+                        <Link
+                            to = {`/artists/${artist.name}`}
+                            key = { artist.name }
+                        >
+                            <Artist 
+                                key  = {artist.id}
+                                name = {artist.name}
+                                img_URL = {artist.url}
+                            />
+                        </Link>
+                    ))
+                }
+            </ul>
+            <div style={{ "textAlign":"center" }}>
+                <Link 
+                    className='btn'
+                    to  ='/new-artist'
+                >Add Artist
+                </Link>
+            </div>
+        </>
     );
 }
 

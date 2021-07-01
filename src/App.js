@@ -4,6 +4,7 @@ import React, { Suspense, useCallback, useEffect, useState } from 'react';
 import Layout from './layout/Layout';
 import LoadingSpinner from './UI/LoadingSpinner';
 import AlbumDetail from './components/Albums/AlbumDetail';
+import AddGenre from './components/Genres/AddGenre';
 
 const Genres    = React.lazy( () => import('./pages/Genres'));
 const Artists   = React.lazy( () => import('./pages/Artists'));
@@ -91,7 +92,6 @@ function App() {
 
       const sortedAlbums = loadedAlbums.sort(fieldSorter(['genre', 'artist', 'year', 'title']));
     
-
       setGenres(loadedGenres);
       setArtists(loadedArtists);
       setAlbums(sortedAlbums);
@@ -158,6 +158,9 @@ function App() {
             </Route>
             <Route path='/genres/:genreId' >
               <Albums albums={albums} albumSource={1} />
+            </Route>
+            <Route path='/new-genre'>
+              <AddGenre />
             </Route>
             <Route path='/artists' exact>
               <Artists artists={artists}/>

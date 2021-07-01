@@ -3,6 +3,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     grid-gap: 1.25em;
-  
+
     padding: 1rem;
-  }
+}
+
+.center {
+    margin: auto;
+    width: 3%;
+    text-align: center;
+    padding: 10px;
+}

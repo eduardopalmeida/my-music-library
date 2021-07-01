@@ -3,7 +3,9 @@ import GenreList from "../components/Genres/GenreList"
 const Genres = (props) => {
 
     return (
-            <GenreList genres={props.genres} />
+            <>
+                <GenreList genres={props.genres} />                
+            </>
     )
 }
 
