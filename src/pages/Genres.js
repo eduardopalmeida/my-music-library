@@ -1,11 +1,9 @@
 import GenreList from "../components/Genres/GenreList"
 
-const Genres = (props) => {
+const Genres = () => {
 
     return (
-            <>
-                <GenreList genres={props.genres} />                
-            </>
+            <GenreList />                
     )
 }
 

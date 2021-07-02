@@ -1,0 +1,88 @@
+import { useRef } from 'react';
+import classes from './AddArtist.module.css'
+import validator from 'validator';
+import { useHistory } from 'react-router-dom';
+
+const AddArtist = () => {
+    const nameInputRef = useRef('');
+    const urlInputRef = useRef('');
+
+    const history = useHistory(); 
+
+    const formSubmitionHandler = async (event) => {
+        event.preventDefault();
+
+        const enteredName = nameInputRef.current.value;
+        const enteredURL = urlInputRef.current.value;
+
+        // VALIDATION
+
+        if(enteredName === '' || enteredURL === '') {
+            return;
+        }
+        else if( !validator.isURL(enteredURL)) {
+            console.log("URL :: ", enteredURL, " INVALID!");
+            return;
+        }
+        
+        // SUBMIT
+        
+        const elemArtist = {
+            name : enteredName,
+            url : enteredURL
+        }
+
+        try {
+            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/artists.json', {
+                method : 'POST',
+                body: JSON.stringify(elemArtist),
+                headers: {
+                    'Content-Type': 'application/json',
+                  }    
+            })
+
+            const data = await response.json();
+          
+            if (!response.ok) {
+              throw new Error(data.message || 'Could not create artist.');
+            }
+            else {
+                history.push('/artists');
+            }
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
+
+    return (
+        <form className={classes.formbox} onSubmit={formSubmitionHandler}>
+            <div className="form-control">
+                <label htmlFor='name'>Artist name</label>
+                <input
+                    type='text'
+                    id='name'
+                    ref={nameInputRef}
+                    placeholder='Aretha Franklin'
+                    required
+                ></input>
+            </div>
+            <div className="form-control">
+                <label htmlFor='name'>Artist image URL</label>
+                <input
+                    type='text'
+                    id='url'
+                    ref={urlInputRef}
+                    placeholder='https://example.com/artist.jpg'
+                    pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+                    required
+                ></input>
+            </div>
+            <div className="form-actions">
+                <button className={classes.btn}>Submit</button>
+            </div>            
+        </form>
+    )
+}
+
+export default AddArtist;

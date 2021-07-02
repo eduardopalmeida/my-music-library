@@ -3,6 +3,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   grid-gap: 1.25em;
+  
+  margin: 0;
+  padding: 0;
 
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+
+  /* padding: 1rem; */
+}
+
+.btnAddAlbum {
+  text-align : right;
   padding: 1rem;
+
+  margin: 1rem;
 }

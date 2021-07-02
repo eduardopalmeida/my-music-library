@@ -1,9 +1,9 @@
 import ArtistList from '../components/Artists/ArtistList';
 
-const Artists = (props) => {
+const Artists = () => {
 
     return (
-            <ArtistList artists={props.artists} />
+            <ArtistList />
     )
 }
 

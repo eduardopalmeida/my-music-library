@@ -5,6 +5,13 @@ import classes from './AlbumList.module.css';
 const AlbumList = (props) => {
     return (
         <>
+            <div className={classes.btnAddAlbum}>
+                <Link 
+                    className='btn'
+                    to  ='/new-album'
+                >Add Album
+                </Link>
+            </div>
             <ul className={classes.wrapper}>
                 {
                     props.albums.map( (album) => (
@@ -22,7 +29,6 @@ const AlbumList = (props) => {
                         </Link>
                 ))}
             </ul>
-            {/* <button>Add Album</button> */}
         </>
     );
 }

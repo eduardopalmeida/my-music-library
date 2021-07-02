@@ -4,7 +4,6 @@ import validator from 'validator';
 import { useHistory } from 'react-router-dom';
 
 const AddGenre = () => {
-
     const nameInputRef = useRef('');
     const urlInputRef = useRef('');
 

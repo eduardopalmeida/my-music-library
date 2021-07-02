@@ -4,11 +4,21 @@ import LoadingSpinner from '../../UI/LoadingSpinner';
 import Genre from "./Genre";
 import classes from './GenreList.module.css';
 
-const GenreList = (props) => {
+const GenreList = () => {
     const [genres, setGenres] = useState([]);
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+
+    const sortGenres = ( a, b ) => {
+        if ( a.name < b.name ){
+          return -1;
+        }
+        if ( a.name > b.name ){
+          return 1;
+        }
+        return 0;
+    }
 
     const fetchGenres = useCallback(async () => {
         setIsLoading(true);
@@ -16,15 +26,13 @@ const GenreList = (props) => {
 
         try {
             const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/genres.json');
+            const genresTemp = await response.json();
+            const transformedTemp = [];
 
             if(!response.ok) {
                 throw new Error('Something went wrong!')
             }
       
-            const genresTemp = await response.json();
-
-            const transformedTemp = [];
-
             for(const key in genresTemp) {
 
                 const genreObject = {
@@ -34,6 +42,8 @@ const GenreList = (props) => {
 
                 transformedTemp.push(genreObject);
             }
+
+            transformedTemp.sort(sortGenres);
 
             setGenres(transformedTemp);
       
@@ -66,9 +76,15 @@ const GenreList = (props) => {
         )
     }
 
-
     return (
         <>
+            <div className={classes.btnAddGenre}>
+                <Link 
+                    className='btn'
+                    to  ='/new-genre'
+                >Add Genre
+                </Link>
+            </div>
             <ul className={classes.wrapper}>
                 {
                     genres.map( (genre) => (
@@ -77,19 +93,13 @@ const GenreList = (props) => {
                             key = { genre.id }
                         >
                             <Genre 
-                                name  = {genre.name}
+                                key     = {genre.id}
+                                name    = {genre.name}
                                 img_URL = {genre.url}
                             />
                         </Link>
                 ))}
             </ul>
-            <div style={{ "textAlign":"center" }}>
-                <Link 
-                    className='btn'
-                    to  ='/new-genre'
-                >Add Genre
-                </Link>
-            </div>
         </>
     )
 }

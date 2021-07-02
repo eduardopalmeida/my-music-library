@@ -10,19 +10,28 @@ const ArtistList = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
+    const sortArtists = ( a, b ) => {
+        if ( a.name < b.name ){
+          return -1;
+        }
+        if ( a.name > b.name ){
+          return 1;
+        }
+        return 0;
+      }
+
     const fetchArtists = useCallback(async () => {
         setIsLoading(true);
         setError(null);
 
         try {
             const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/artists.json');
+            const artistsTemp = await response.json();
+            const transformedTemp = [];
 
             if(!response.ok) {
                 throw new Error('Something went wrong!')
             }
-      
-            const artistsTemp = await response.json();
-            const transformedTemp = [];
 
             for(const key in artistsTemp) {
 
@@ -34,6 +43,7 @@ const ArtistList = () => {
                 transformedTemp.push(artistObject);
             }
 
+            transformedTemp.sort(sortArtists);
 
             setArtists(transformedTemp);
       
@@ -68,12 +78,19 @@ const ArtistList = () => {
 
     return (
         <>
+            <div className={classes.btnAddArtist}>
+                <Link 
+                    className='btn'
+                    to  ='/new-artist'
+                >Add Artist
+                </Link>
+            </div>
             <ul className={classes.wrapper}>
                 {
                     artists.map( (artist) => (
                         <Link
                             to = {`/artists/${artist.name}`}
-                            key = { artist.name }
+                            key = { artist.id }
                         >
                             <Artist 
                                 key  = {artist.id}
@@ -84,13 +101,6 @@ const ArtistList = () => {
                     ))
                 }
             </ul>
-            <div style={{ "textAlign":"center" }}>
-                <Link 
-                    className='btn'
-                    to  ='/new-artist'
-                >Add Artist
-                </Link>
-            </div>
         </>
     );
 }

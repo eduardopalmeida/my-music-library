@@ -5,6 +5,8 @@ import Layout from './layout/Layout';
 import LoadingSpinner from './UI/LoadingSpinner';
 import AlbumDetail from './components/Albums/AlbumDetail';
 import AddGenre from './components/Genres/AddGenre';
+import AddArtist from './components/Artists/AddArtist';
+import AddAlbum from './components/Albums/AddAlbum';
 
 const Genres    = React.lazy( () => import('./pages/Genres'));
 const Artists   = React.lazy( () => import('./pages/Artists'));
@@ -91,9 +93,20 @@ function App() {
       loadedArtists.sort(sortGenreArtist);
 
       const sortedAlbums = loadedAlbums.sort(fieldSorter(['genre', 'artist', 'year', 'title']));
-    
-      setGenres(loadedGenres);
-      setArtists(loadedArtists);
+
+      setGenres(
+        loadedGenres.map( genre => ({
+          value : genre.name,
+          label : genre.name
+        }))
+      );
+
+      setArtists(
+        loadedArtists.map( artist => ({
+          value : artist.name,
+          label : artist.name
+        })) 
+      );
       setAlbums(sortedAlbums);
         
     } catch (error) {
@@ -154,7 +167,7 @@ function App() {
               {content}
             </Route>
             <Route path='/genres' exact >
-              <Genres genres={genres} />
+              <Genres />
             </Route>
             <Route path='/genres/:genreId' >
               <Albums albums={albums} albumSource={1} />
@@ -163,16 +176,22 @@ function App() {
               <AddGenre />
             </Route>
             <Route path='/artists' exact>
-              <Artists artists={artists}/>
+              <Artists />
             </Route>
             <Route path='/artists/:artistId' >
               <Albums albums={albums} albumSource={2} />
+            </Route>
+            <Route path='/new-artist'>
+              <AddArtist />
             </Route>
             <Route path='/albums' exact>
               <Albums albums={albums} artistAlbums={3}/>
             </Route>
             <Route path='/albums/:albumId'>
               <AlbumDetail />
+            </Route>
+            <Route path='/new-album'>
+              <AddAlbum genres={genres} artists={artists} />
             </Route>
             <Route path='/tracks' >
               <Tracks/>

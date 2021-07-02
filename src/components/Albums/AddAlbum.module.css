@@ -1,0 +1,32 @@
+.formbox { 
+    width: 90%;
+    max-width: 35rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #cad5e9;
+    margin: 3rem auto;
+}
+
+.btn {
+    background-color: #365572;
+    font-size:large;
+    color: white;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    border: 2px solid #11acac;
+    cursor: pointer;
+  }
+  
+  .btn:hover,
+  .btn:active {
+    background-color: #11acac;
+}
+
+.select {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;  
+}
