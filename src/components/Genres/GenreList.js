@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import AddButton from '../../UI/AddButton';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import Genre from "./Genre";
 import classes from './GenreList.module.css';
 
-const GenreList = () => {
+const GenreList = (props) => {
     const [genres, setGenres] = useState([]);
 
     const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +26,7 @@ const GenreList = () => {
         setError(null);
 
         try {
-            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/genres.json');
+            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/genres.json');
             const genresTemp = await response.json();
             const transformedTemp = [];
 
@@ -78,13 +79,11 @@ const GenreList = () => {
 
     return (
         <>
-            <div className={classes.btnAddGenre}>
-                <Link 
-                    className='btn'
-                    to  ='/new-genre'
-                >Add Genre
-                </Link>
-            </div>
+            <AddButton
+                linkTo  ={'/new-genre'}
+                linkText= {"Add Genre"}
+                side = {true}
+            />
             <ul className={classes.wrapper}>
                 {
                     genres.map( (genre) => (

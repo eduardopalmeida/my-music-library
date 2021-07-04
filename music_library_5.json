@@ -1,0 +1,422 @@
+{
+  "artists" : {
+    "-MdYYgaPE4tp1bwcOSiu" : {
+      "name" : "Air",
+      "url" : "https://www.dropbox.com/s/5qxlqvhqns4sbzu/Air.jpg?dl=1"
+    },
+    "-MdYYgcqo2krRzOfYvwL" : {
+      "name" : "Al Green",
+      "url" : "https://www.dropbox.com/s/z481te7q78uge61/Al%20Green.jpg?dl=1"
+    },
+    "-MdYYgfGZ62ORZL7fX1w" : {
+      "name" : "Clã",
+      "url" : "https://www.dropbox.com/s/i1qsq2zc0s7i1r4/Cl%C3%A3.jpg?dl=1"
+    },
+    "-MdYYghhhNlExhcpBex5" : {
+      "name" : "Daft Punk",
+      "url" : "https://www.dropbox.com/s/yrac51dd8tiu9rm/Daft%20Punk.jpg?dl=1"
+    },
+    "-MdYYgk9jIpiQqwzZfbh" : {
+      "name" : "Fausto",
+      "url" : "https://www.dropbox.com/s/7ik9vyc5wlvdeq3/Fausto.jpg?dl=1"
+    },
+    "-MdYYgmXb_9Zltd6OWcG" : {
+      "name" : "Herbie Hancock",
+      "url" : "https://www.dropbox.com/s/aohpq66si0zt5k3/Herbie.jpg?dl=1"
+    },
+    "-MdYYgp3j5e8srTNJsDJ" : {
+      "name" : "Kraftwerk",
+      "url" : "https://www.dropbox.com/s/s68od7fpftkvrul/kraftwerk.jpg?dl=1"
+    },
+    "-MdYYgrTSCG4EA1r-R6k" : {
+      "name" : "Led Zeppelin",
+      "url" : "https://www.dropbox.com/s/vksmhm8y943got7/Led Zeppelin.jpg?dl=1"
+    },
+    "-MdYYgtrFtZGu0iGDaul" : {
+      "name" : "Miles Davis",
+      "url" : "https://www.dropbox.com/s/a1ur9qb2jl9nern/Miles Davis.jpg?dl=1"
+    },
+    "-MdYYgwH6h-xOACL9SzH" : {
+      "name" : "Otis Redding",
+      "url" : "https://www.dropbox.com/s/8rys8bau41mepk7/Otis Redding.jpg?dl=1"
+    },
+    "-MdYYgyfo44NE54CGJWI" : {
+      "name" : "Pat Metheny",
+      "url" : "https://www.dropbox.com/s/7592a76hd509vid/Pat Metheny.jpg?dl=1"
+    },
+    "-MdYYh03NqGR-amh97my" : {
+      "name" : "Pat Metheny Group",
+      "url" : "https://www.dropbox.com/s/f3p13i0kq5k5im0/Pat%20Metheny%20Group.jpg?dl=1"
+    },
+    "-MdYYh2V-lav8AEW6CG0" : {
+      "name" : "Ray Charles",
+      "url" : "https://www.dropbox.com/s/krmlaye9dp7w0kg/Ray Charles.jpg?dl=1"
+    },
+    "-MdYYh4qTBlPvysCQn9X" : {
+      "name" : "Sérgio Godinho",
+      "url" : "https://www.dropbox.com/s/s7wasnbh8i36aio/S%C3%A9rgio Godinho.jpg?dl=1"
+    },
+    "-MdYYh7H4lsrMzBgtNGx" : {
+      "name" : "The Beach Boys",
+      "url" : "https://www.dropbox.com/s/cqoliddz0hphrcl/The Beach Boys.jpg?dl=1"
+    },
+    "-MdYYh9guDNge8P6e1wG" : {
+      "name" : "The Beatles",
+      "url" : "https://www.dropbox.com/s/c2pqkcdil0cemlc/The Beatles.jpg?dl=1"
+    },
+    "-MdcTDB5QkhlTRyd5CNw" : {
+      "name" : "Elvis Presley",
+      "url" : "https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2020/08/99f1a5c-elvis-presley-1024x768.jpg"
+    }
+  },
+  "genres" : {
+    "-MdYaMWyq53va2Hul0Ys" : {
+      "name" : "Electronica",
+      "url" : "https://www.dropbox.com/s/izoma75939xzauj/Electronica.jpg?dl=1"
+    },
+    "-MdYaMZRo9LJUNJgikZH" : {
+      "name" : "Jazz",
+      "url" : "https://www.dropbox.com/s/dp9bfhq4it4akez/Jazz.jpg?dl=1"
+    },
+    "-MdYaMapcbLyVEUPESle" : {
+      "name" : "Portuguesa",
+      "url" : "https://www.dropbox.com/s/gxpw7a0iv05y7vv/Portuguesa.jpg?dl=1"
+    },
+    "-MdYaMdGfygDKHg3P-OD" : {
+      "name" : "Rock",
+      "url" : "https://www.dropbox.com/s/xs3ct5do3a0ivfi/Rock.jpg?dl=1"
+    },
+    "-MdYaMfiryHdTG_DF-Gh" : {
+      "name" : "Soul",
+      "url" : "https://www.dropbox.com/s/ph1qhow5gzolapd/Soul.jpg?dl=1"
+    },
+    "-MdcT85xuO1O58o6QVny" : {
+      "name" : "Reggae",
+      "url" : "https://www.dropbox.com/s/q7wfn91whvf3il8/Reggae.jpg?dl=1"
+    }
+  },
+  "albums" : {
+    "-McyOTdKjijkuX4ySrMc" : {
+      "artist" : "Air",
+      "cover" : "https://www.dropbox.com/s/pwzpayh6ct3r7h6/Air-%5B1998%5D-Moon%20Safari.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Moon Safari",
+      "year" : "1998"
+    },
+    "-McyOTfqQSvY-k-9Jj7N" : {
+      "artist" : "Air",
+      "cover" : "https://www.dropbox.com/s/buu0tgach0l7r5w/Air-%5B2004%5D-Talkie%20Walkie.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Talkie Walkie",
+      "year" : "2004"
+    },
+    "-McyOTi_IV57y3Vl7Sj-" : {
+      "artist" : "Air",
+      "cover" : "https://www.dropbox.com/s/ssudv2qqaeq9eub/Air-%5B2012%5D-Le%20Voyage%20Dans%20La%20Lune.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Le Voyage Dans La Lune",
+      "year" : "2012"
+    },
+    "-McyOTkyyTZOokVPz2un" : {
+      "artist" : "Kraftwerk",
+      "cover" : "https://www.dropbox.com/s/4fjenvm4usipq9d/Kraftwerk-%5B1974%5D-Autobahn.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Autobahn",
+      "year" : "1974"
+    },
+    "-McyOTnYtchDrr2mYEnF" : {
+      "artist" : "Kraftwerk",
+      "cover" : "https://www.dropbox.com/s/6jd6jzqya4e2tf2/Kraftwerk-%5B1975%5D-Radio-Activity.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Radio-Activity",
+      "year" : "1975"
+    },
+    "-McyOTspZHVRXp77wKtb" : {
+      "artist" : "Kraftwerk",
+      "cover" : "https://www.dropbox.com/s/nks7qdxcuou8ug2/Kraftwerk-1977-Trans-Europe-Express.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Trans-Europe-Express",
+      "year" : "1977"
+    },
+    "-McyOTv97xyEdtM1f7Op" : {
+      "artist" : "Daft Punk",
+      "cover" : "https://www.dropbox.com/s/ux3ssfbixrdmp4n/Daft%20Punk-%5B1997%5D-Homework.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Homework",
+      "year" : "1997"
+    },
+    "-McyOTylpPel97dD2p5R" : {
+      "artist" : "Daft Punk",
+      "cover" : "https://www.dropbox.com/s/bbdqtya3s036ocr/Daft%20Punk-%5B2001%5D-Discovery.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Discovery",
+      "year" : "2001"
+    },
+    "-McyOU0C76oCkdPAh-dW" : {
+      "artist" : "Daft Punk",
+      "cover" : "https://www.dropbox.com/s/0lp5p1ccttyrxep/Daft%20Punk-%5B2013%5D-Random%20Access%20Memories.jpg?dl=1",
+      "genre" : "Electronica",
+      "title" : "Random Access Memories",
+      "year" : "2013"
+    },
+    "-McyOU2Z1N6RkM7dXh2z" : {
+      "artist" : "Herbie Hancock",
+      "cover" : "https://www.dropbox.com/s/e6kqonp7mha3hkn/Herbie%20Hancock-%5B1962%5D-Takin%27%20Off.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Takin' Off",
+      "year" : "1962"
+    },
+    "-McyOU84Z8Toh7ua70m7" : {
+      "artist" : "Herbie Hancock",
+      "cover" : "https://www.dropbox.com/s/d3788qfm8e8lqju/Herbie%20Hancock-%5B1965%5D-Maiden%20Voyage.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Maiden Voyage",
+      "year" : "1965"
+    },
+    "-McyOUASM26XkSayZD-5" : {
+      "artist" : "Herbie Hancock",
+      "cover" : "https://www.dropbox.com/s/9b29hrx9tgt3ur7/Herbie%20Hancock-%5B1973-2%5D-Headhunters.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Headhunters",
+      "year" : "1973-2"
+    },
+    "-McyOUFNfO9r3XYhCYym" : {
+      "artist" : "Miles Davis",
+      "cover" : "https://www.dropbox.com/s/kr4o7b37g2zf19u/Miles%20Davis-%5B1949%5D-Birth%20of%20the%20Cool.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Birth of the Cool",
+      "year" : "1949"
+    },
+    "-McyOUHslmvm66Jwa160" : {
+      "artist" : "Miles Davis",
+      "cover" : "https://www.dropbox.com/s/sev78d6wq42ukx7/Miles%20Davis-%5B1959%5D-Kind%20of%20Blue.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Kind of Blue",
+      "year" : "1959"
+    },
+    "-McyOUR7queMsXo7F59g" : {
+      "artist" : "Miles Davis",
+      "cover" : "https://www.dropbox.com/s/adb05xi9i1rze0n/Miles%20Davis-%5B1969%5D-Bitches%20Brew.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Bitches Brew",
+      "year" : "1969"
+    },
+    "-McyOUZZATkGVai9QZKy" : {
+      "artist" : "Pat Metheny",
+      "cover" : "https://www.dropbox.com/s/o69ew03yj0bj2kj/Pat%20Metheny-%5B1976%5D-Bright%20Size%20Life.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Bright Size Life",
+      "year" : "1976"
+    },
+    "-McyOUgwYMF7crLLbB5j" : {
+      "artist" : "Pat Metheny Group",
+      "cover" : "https://www.dropbox.com/s/a1k643xrwzxrtha/Pat%20Metheny%20Group-%5B1978%5D-Pat%20Metheny%20Group.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "Pat Metheny Group",
+      "year" : "1978"
+    },
+    "-McyOUu_1gMd8cbTRSNq" : {
+      "artist" : "Pat Metheny Group",
+      "cover" : "https://www.dropbox.com/s/3igvvfwrk6jwoss/Pat%20Metheny%20Group-%5B1984%5D-First%20Circle.jpg?dl=1",
+      "genre" : "Jazz",
+      "title" : "First Circle",
+      "year" : "1984"
+    },
+    "-McyOVGAx0ls0flvo46J" : {
+      "artist" : "Sérgio Godinho",
+      "cover" : "https://www.dropbox.com/s/3x8l4lndr4zx4fi/S%C3%A9rgio%20Godinho-%5B1971%5D-Os%20Sobreviventes.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "Os Sobreviventes",
+      "year" : "1971"
+    },
+    "-McyOVIbWTaxlE9s-UtI" : {
+      "artist" : "Sérgio Godinho",
+      "cover" : "https://www.dropbox.com/s/esrtxnbjpbwwmce/S%C3%A9rgio%20Godinho-%5B1972%5D-Pr%C3%A9-Hist%C3%B3rias.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "Pré-Histórias",
+      "year" : "1972"
+    },
+    "-McyOVL2WbQ0oBOzuHrS" : {
+      "artist" : "Sérgio Godinho",
+      "cover" : "https://www.dropbox.com/s/b0xbb9ssb4ey6u9/S%C3%A9rgio%20Godinho-%5B1978%5D-pano-cru.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "pano-cru",
+      "year" : "1978"
+    },
+    "-McyOVPpG0ADWXCuU3pD" : {
+      "artist" : "Clã",
+      "cover" : "https://www.dropbox.com/s/z7fdaa3slrw6fmv/Cl%C3%A3-%5B1997%5D-Kazoo.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "Kazoo",
+      "year" : "1997"
+    },
+    "-McyOVSB3ncAgiK3CFdp" : {
+      "artist" : "Clã",
+      "cover" : "https://www.dropbox.com/s/pnq5809dexjlor7/Cl%C3%A3-%5B2000%5D-Lustro.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "Lustro",
+      "year" : "2000"
+    },
+    "-McyOVXomiV4RwFWvCyd" : {
+      "artist" : "Clã",
+      "cover" : "https://www.dropbox.com/s/1lyjskf5elfl4c3/Cl%C3%A3-%5B2004%5D-Rosa%20Carne.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "Rosa Carne",
+      "year" : "2004"
+    },
+    "-McyOV_JfIQXH89edu-x" : {
+      "artist" : "Fausto",
+      "cover" : "https://www.dropbox.com/s/dxele5ntjen8whq/Fausto-%5B1982%5D-Por%20Este%20Rio%20Acima.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "Por Este Rio Acima",
+      "year" : "1982"
+    },
+    "-McyOVf1aJyM09SKHVC4" : {
+      "artist" : "Fausto",
+      "cover" : "https://www.dropbox.com/s/5lbvfqh2u6e9iae/Fausto-%5B1989%5D-A%20Preto%20e%20Branco.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "A Preto e Branco",
+      "year" : "1989"
+    },
+    "-McyOVi8JKa-XPU6h7FD" : {
+      "artist" : "Fausto",
+      "cover" : "https://www.dropbox.com/s/nsyn5d1in35bg7r/Fausto-%5B1999%5D-Grande%2C%20grande%20%C3%A9%20a%20viagem.jpg?dl=1",
+      "genre" : "Portuguesa",
+      "title" : "Grande, grande é a viagem",
+      "year" : "1999"
+    },
+    "-McyOVnXQBXY2v5lxauJ" : {
+      "artist" : "Led Zeppelin",
+      "cover" : "https://www.dropbox.com/s/89ra1ta5tqyb7qk/Led%20Zeppelin-%5B1969-1%5D-Led%20Zeppelin.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Led Zeppelin",
+      "year" : "1969-1"
+    },
+    "-McyOVps90i2yO2yzM8Z" : {
+      "artist" : "Led Zeppelin",
+      "cover" : "https://www.dropbox.com/s/76mfsf49uj7p94l/Led%20Zeppelin-%5B1969-2%5D-Led%20Zeppelin%20II.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Led Zeppelin II",
+      "year" : "1969-2"
+    },
+    "-McyOVvP4p6vfhNOo7ES" : {
+      "artist" : "Led Zeppelin",
+      "cover" : "https://www.dropbox.com/s/17nh0qe0wyvz8qa/Led%20Zeppelin-%5B1970%5D-Led%20Zeppelin%20III.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Led Zeppelin III",
+      "year" : "1970"
+    },
+    "-McyOVxwK5Yq1TNg-lYc" : {
+      "artist" : "The Beatles",
+      "cover" : "https://www.dropbox.com/s/u3symbdtr7ap7g3/The%20Beatles-%5B1963-1%5D-Please%20Please%20Me.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Please Please Me",
+      "year" : "1963-1"
+    },
+    "-McyOW3Ju3dnGPsLsnLn" : {
+      "artist" : "The Beatles",
+      "cover" : "https://www.dropbox.com/s/mtr1uw8ew21trn8/The%20Beatles-%5B1967%5D-Sgt%20Peppers%20Lonely%20Hearts%20Club%20Band.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Sgt Peppers Lonely Hearts Club Band",
+      "year" : "1967"
+    },
+    "-McyOW5s_qZR-97E8Bx1" : {
+      "artist" : "The Beatles",
+      "cover" : "https://www.dropbox.com/s/0zug8re3xua0xn6/The%20Beatles-%5B1969%5D-Abbey%20Road.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Abbey Road",
+      "year" : "1969"
+    },
+    "-McyOWB34FYKUQ2hAbMV" : {
+      "artist" : "The Beach Boys",
+      "cover" : "https://www.dropbox.com/s/dxdbqzngs2snn0w/The%20Beach%20Boys-%5B1963-1%5D-Surfer%20Girl.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Surfer Girl",
+      "year" : "1963-1"
+    },
+    "-McyOWDSb4kkTP5ztPsQ" : {
+      "artist" : "The Beach Boys",
+      "cover" : "https://www.dropbox.com/s/xgxn5ni223kbt0p/The%20Beach%20Boys-%5B1963-2%5D-Surfin%27%20USA.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Surfin' USA",
+      "year" : "1963-2"
+    },
+    "-McyOWGzMiiSCwXylxax" : {
+      "artist" : "The Beach Boys",
+      "cover" : "https://www.dropbox.com/s/x77vg6j44nla6hf/The%20Beach%20Boys-%5B1966%5D-Pet%20Sounds.jpg?dl=1",
+      "genre" : "Rock",
+      "title" : "Pet Sounds",
+      "year" : "1966"
+    },
+    "-McyOWJRDs6pKfEGyjvi" : {
+      "artist" : "Ray Charles",
+      "cover" : "https://www.dropbox.com/s/ro9s6es5yg6s9ci/Ray%20Charles-%5B1957%5D-Ray%20Charles.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "Ray Charles",
+      "year" : "1957"
+    },
+    "-McyOWMDG20SprZjHiMX" : {
+      "artist" : "Ray Charles",
+      "cover" : "https://www.dropbox.com/s/n14nxm6o7jtyqoe/Ray%20Charles-%5B1959-1%5D-The%20Genius%20of%20Ray%20Charles.jpg.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "The Genius of Ray Charles",
+      "year" : "1959-1"
+    },
+    "-McyOWRXG7dCC0r0hnq7" : {
+      "artist" : "Ray Charles",
+      "cover" : "https://www.dropbox.com/s/4ros0fvniqzs0xz/Ray%20Charles-%5B1959-2%5D-What%27d%20I%20Say.jpg.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "What'd I Say",
+      "year" : "1959-2"
+    },
+    "-McyOWU1AYYbxRxYx2U8" : {
+      "artist" : "Al Green",
+      "cover" : "https://www.dropbox.com/s/5ftdieg89ieayuz/Al%20Green-%5B1972-1%5D-Let%27s%20Stay%20Together.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "Let's Stay Together",
+      "year" : "1972-1"
+    },
+    "-McyOWXXq4ZgSJiCer8M" : {
+      "artist" : "Al Green",
+      "cover" : "https://www.dropbox.com/s/avq1oio3h98yo3m/Al%20Green-%5B1972-2%5D-I%27m%20Still%20In%20Love%20With%20You.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "I'm Still In Love With You",
+      "year" : "1972-2"
+    },
+    "-McyOWZxBKTDAgf-cJeE" : {
+      "artist" : "Al Green",
+      "cover" : "https://www.dropbox.com/s/udd1a6ink0yqv5y/Al%20Green-%5B1973%5D-Call%20Me.jpg.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "Call Me",
+      "year" : "1973"
+    },
+    "-McyOWbJPH9feidpdASX" : {
+      "artist" : "Otis Redding",
+      "cover" : "https://www.dropbox.com/s/kqhjcqwclu7djhr/Otis%20Redding-%5B1965%5D-Otis%20Blue.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "Otis Blue",
+      "year" : "1965"
+    },
+    "-McyOWgxaqfLx8-NO5UP" : {
+      "artist" : "Otis Redding",
+      "cover" : "https://www.dropbox.com/s/necld6z1bf6fe1y/Otis%20Redding-%5B1966%5D-The%20Soul%20Album.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "The Soul Album",
+      "year" : "1966"
+    },
+    "-McyOWj_vM6EDKagDYpA" : {
+      "artist" : "Otis Redding",
+      "cover" : "https://www.dropbox.com/s/yreekgs95yf6368/Otis%20Redding-%5B1968%5D-The%20Dock%20of%20The%20Bay.jpg?dl=1",
+      "genre" : "Soul",
+      "title" : "The Dock of The Bay",
+      "year" : "1968"
+    },
+    "-Mdc-P5SZTgnsY0_4Jqy" : {
+      "artist" : "Miles Davis",
+      "cover" : "https://i1.sndcdn.com/artworks-BmPYhy3lr4j0Ly8y-57tdeQ-t500x500.jpg",
+      "genre" : "Jazz",
+      "title" : "In a Silent Way",
+      "year" : "1969"
+    }
+  }
+}

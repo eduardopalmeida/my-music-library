@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
+
+/* HIDE SCROLLBAR 
+*{
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+*/
+
+
 .btn {
   background-color: #365572;
   font-size:x-large;
@@ -28,22 +39,6 @@ code {
   border: #11acac 3px solid;
 }
 
-/* .btn--flat {
-  cursor: pointer;
-  font: inherit;
-  color: teal;
-  border: none;
-  background-color: none;
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-}
-
-.btn--flat:hover,
-.btn--flat:active {
-  background-color: teal;
-  color: white;
-} */
 
 .form-control {
   margin-bottom: 1rem;

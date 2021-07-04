@@ -1,21 +1,4 @@
 {
-  "artists" : {
-    "a001" : "Herbie Hancock",
-    "a010" : "Air",
-    "a011" : "Kraftwerk",
-    "a012" : "Daft Punk",
-    "a013" : "Sérgio Godinho",
-    "a014" : "José Afonso",
-    "a015" : "Fausto",
-    "a002" : "Miles Davis",
-    "a003" : "Pat Metheny",
-    "a004" : "Led Zeppelin",
-    "a005" : "The Beatles",
-    "a006" : "The Beach Boys",
-    "a007" : "Ray Charles",
-    "a008" : "Al Green",
-    "a009" : "Otis Reding"
-  },
   "comments" : {
     "-Mac8C2hlu6egamRHjP4" : {
       "-MacNr_y_9n84JJ0hey_" : {
@@ -91,13 +74,6 @@
       "price" : 1.5,
       "title" : "Ruffles"
     } ]
-  },
-  "genres" : {
-    "g001" : "Jazz",
-    "g002" : "Rock",
-    "g003" : "Soul",
-    "g004" : "Electronica",
-    "g005" : "Portuguesa"
   },
   "meals" : {
     "m1" : {
@@ -238,44 +214,6 @@
         "postal" : "12332",
         "street" : "Rua D. João IV n455 1o Andar"
       }
-    }
-  },
-  "quotes" : {
-    "-Mac7lgpMXrSRLRU77Bu" : {
-      "author" : "Nelson Mandela",
-      "text" : "The greatest glory in living lies not in never falling, but in rising every time we fall."
-    },
-    "-Mac7qbQ8nsVAb2wU8Eg" : {
-      "author" : "Walt Disney",
-      "text" : "The way to get started is to quit talking and begin doing."
-    },
-    "-Mac7v2ou-xpVtVitURh" : {
-      "author" : "Steve Jobs",
-      "text" : "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking."
-    },
-    "-Mac8-29ELKbWRSNiNO-" : {
-      "author" : "Eleanor Roosevelt",
-      "text" : "If life were predictable it would cease to be life, and be without flavor."
-    },
-    "-Mac83ODpmRzPeekfbck" : {
-      "author" : "Oprah Winfrey",
-      "text" : "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough."
-    },
-    "-Mac88QkQujm9LONp5qE" : {
-      "author" : "James Cameron",
-      "text" : "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success."
-    },
-    "-Mac8C2hlu6egamRHjP4" : {
-      "author" : "John Lennon",
-      "text" : "Life is what happens when you're busy making other plans."
-    },
-    "-Mai_MCzvR4jiJXurloU" : {
-      "author" : "Eduardo Pixoto d'Almeida",
-      "text" : "Sara, tu és a coisa mais linda da minha vida."
-    },
-    "-Mail5jt8-Y3BE-JLR7O" : {
-      "author" : "Sara Pereira",
-      "text" : "Eduardo Peixô T'Almeida, és o sol da minha vida "
     }
   },
   "tasks" : {

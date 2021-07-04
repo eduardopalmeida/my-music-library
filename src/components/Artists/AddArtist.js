@@ -33,7 +33,7 @@ const AddArtist = () => {
         }
 
         try {
-            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/artists.json', {
+            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/artists.json', {
                 method : 'POST',
                 body: JSON.stringify(elemArtist),
                 headers: {
@@ -47,7 +47,7 @@ const AddArtist = () => {
               throw new Error(data.message || 'Could not create artist.');
             }
             else {
-                history.push('/artists');
+                history.push('/');
             }
         }
         catch(error) {

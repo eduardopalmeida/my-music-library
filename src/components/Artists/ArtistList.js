@@ -2,9 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import Artist from './Artist'
+import AddButton from '../../UI/AddButton';
 import classes from './ArtistList.module.css';
 
-const ArtistList = () => {
+const ArtistList = (props) => {
     const [artists, setArtists] = useState([]);
 
     const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +26,7 @@ const ArtistList = () => {
         setError(null);
 
         try {
-            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/artists.json');
+            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/artists.json');
             const artistsTemp = await response.json();
             const transformedTemp = [];
 
@@ -78,13 +79,12 @@ const ArtistList = () => {
 
     return (
         <>
-            <div className={classes.btnAddArtist}>
-                <Link 
-                    className='btn'
-                    to  ='/new-artist'
-                >Add Artist
-                </Link>
-            </div>
+            <AddButton
+                linkTo  ={'/new-artist'}
+                linkText= {"Add Artist"}
+                side = {true}
+            />
+
             <ul className={classes.wrapper}>
                 {
                     artists.map( (artist) => (

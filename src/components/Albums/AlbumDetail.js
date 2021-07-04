@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, Suspense } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import classes from './AlbumDetail.module.css';
 
@@ -10,13 +10,13 @@ const AlbumDetail = () => {
     const { albumId } = params;
 
     // console.log("albumId :: ", albumId);
-    // console.log("URL :: ", 'https://react-http-1eb72-default-rtdb.firebaseio.com/music_library/' + albumId + '.json');
+    // console.log("URL :: ", 'https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/music_library' + albumId + '.json');
     // Verificar se é necessário o uso de useCallback
 
     const fetchAlbum = useCallback(async () => {
 
         try {
-            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/music_library/' + albumId + '.json');
+            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/albums/' + albumId + '.json');
             const data = await response.json();
 
             if (!response.ok) {
@@ -24,11 +24,13 @@ const AlbumDetail = () => {
             }
 
             const loadedAlbum = {
-                artist  : data.artist,
-                genre   : data.genre,
-                title   : data.title,
-                year    : data.year,
-                cover   : data.cover
+                artist   : data.artist,
+                genre    : data.genre,
+                title    : data.title,
+                year     : data.year,
+                cover    : data.cover,
+                artistId : data.artistId,
+                genreId  : data.genreId
             };
             setAlbum(loadedAlbum);
 
@@ -54,9 +56,13 @@ const AlbumDetail = () => {
                         <div className={classes.album}>
                             <p>{album.title}</p>
                             <img src={album.cover} alt={album.title} />
-                            <figcaption>{album.artist}</figcaption>
+                            <Link to  = {`/artists/${album.artist}`} >
+                                <figcaption>{album.artist}</figcaption>
+                            </Link>
                             <figcaption>{album.year}</figcaption>
-                            <figcaption>{album.genre}</figcaption>
+                            <Link to  = {`/genres/${album.genre}`} >
+                                <figcaption>{album.genre}</figcaption>
+                            </Link>
                         </div>
                         : <p>Loading...</p>
                 }

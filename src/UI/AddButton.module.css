@@ -1,0 +1,28 @@
+.btn {
+  background-color: #365572;
+  font-size:large;
+  color: white;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  border: 2px solid #11acac;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #11acac;
+}
+
+.btnAddAlbumRight {
+    text-align : right;
+    padding: 1rem;
+
+    margin: 1rem;
+}
+
+.btnAddAlbumCenter {
+    text-align : center;
+    padding: 1rem;
+
+    margin: 1rem;
+  }

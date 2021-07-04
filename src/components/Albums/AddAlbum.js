@@ -14,9 +14,6 @@ const AddAlbum = (props) => {
 
     const history = useHistory(); 
 
-    console.log("GENREOS :: ",  props.genres);
-    console.log("ARTISTS :: ",  props.artists);
-
     const formSubmitionHandler = async (event) => {
         event.preventDefault();
 
@@ -40,15 +37,14 @@ const AddAlbum = (props) => {
         const elemAlbum = {
             title : enteredTitle,
             cover : enteredURL,
-            artist : selectedArtist.value,
-            genre : selectedGenre.value,
-            year: enteredyear
+            artist : selectedArtist.label,
+            genre : selectedGenre.label,
+            year: enteredyear,
         }
 
-        console.log("elemAlbum :: ", elemAlbum);
 
         try {
-            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/music_library.json', {
+            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/albums.json', {
                 method : 'POST',
                 body: JSON.stringify(elemAlbum),
                 headers: {
@@ -62,7 +58,7 @@ const AddAlbum = (props) => {
               throw new Error(data.message || 'Could not create album.');
             }
             else {
-                history.push('/albums');
+                history.push('/');
             }
         }
         catch(error) {
@@ -89,7 +85,7 @@ const AddAlbum = (props) => {
                     id='url'
                     ref={urlInputRef}
                     placeholder='https://example.com/album.jpg'
-                    pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+                    pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&%'\(\)\*\+,;=.]+$"
                     required
                 ></input>
             </div>
@@ -100,7 +96,7 @@ const AddAlbum = (props) => {
                     options={props.artists} 
                     onChange={setSelectedArtist}
                     required
-                    />
+                />
             </div>
 
             <div className="form-control">
@@ -116,12 +112,12 @@ const AddAlbum = (props) => {
                 <label htmlFor='name'>Release Year</label>
                 <input
                     type='number'
-                    min={1000}
-                    max={9999}                    
+                    min={1900}
+                    max={2099}                    
                     id='year'
                     ref={yearInputRef}
                     placeholder='YYYY'
-                    pattern='^\d{4}$'
+                    pattern='^(19|20)\d{2}$'
                     required
                 ></input>
             </div>

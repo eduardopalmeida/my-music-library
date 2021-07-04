@@ -33,7 +33,7 @@ const AddGenre = () => {
         }
 
         try {
-            const response = await fetch('https://react-http-1eb72-default-rtdb.firebaseio.com/genres.json', {
+            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/genres.json', {
                 method : 'POST',
                 body: JSON.stringify(elemGenre),
                 headers: {
@@ -47,7 +47,7 @@ const AddGenre = () => {
               throw new Error(data.message || 'Could not create artist.');
             }
             else {
-                history.push('/genres');
+                history.push('/');
             }
         }
         catch(error) {

@@ -13,17 +13,17 @@ const Artists   = React.lazy( () => import('./pages/Artists'));
 const Albums    = React.lazy( () => import('./pages/Albums'));
 const Tracks    = React.lazy( () => import("./pages/Tracks"));
 
-const FIREBASE_URL = 'https://react-http-1eb72-default-rtdb.firebaseio.com/music_library.json';
+const FIREBASE_URL = 'https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/';
 
 function App() {
 
   const [genres, setGenres] = useState([]);
   const [artists, setArtists] = useState([]);
   const [albums, setAlbums] = useState([]);
-
-  let GENRE_ID = 0;
-  let ARTIST_ID = 0;
-
+  
+  const [selectionGenres, setSelectionGenres] = useState({});
+  const [selectionArtists, setSelectionArtists] = useState({});
+  
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -46,83 +46,95 @@ function App() {
   const fetchLibrary = useCallback(async () => {
     setIsLoading(true);
     setError(null);
-
-    try {
-      const response = await fetch(FIREBASE_URL);
       
-      if(!response.ok) {
-          throw new Error('Something went wrong!')
+    try {
+      
+      // LOAD
+
+      const responseGenres  = await fetch(FIREBASE_URL + "genres.json");
+      const responseArtists = await fetch(FIREBASE_URL + 'artists.json');
+      const responseAlbums  = await fetch(FIREBASE_URL + "albums.json");
+      
+      const loadedGenres  = await responseGenres.json();
+      const loadedArtists = await responseArtists.json();
+      const loadedAlbums  = await responseAlbums.json();
+
+      if(!responseGenres.ok || !responseArtists.ok || !responseAlbums.ok)  { 
+        throw new Error('Something went wrong!') 
       }
 
-      const music_library = await response.json();
+      // MAP
 
-      const loadedGenres = [];
-      const loadedArtists = [];
-      const loadedAlbums = [];
+      const mapedGenres  = [] ;
+      const mapedArtists = [];
+      const mapedAlbums  = [];
 
-      for(const album in music_library) {
-        if( ! loadedGenres.some( genre => genre.name === music_library[album].genre ) ) {
-          loadedGenres.push({
-              key : "g_" + GENRE_ID,
-              name: music_library[album].genre
-          });
-          GENRE_ID++;
+      for(const keyGenres in loadedGenres) {
+        const genreObj = {
+          id : keyGenres,
+          ...loadedGenres[keyGenres]
         }
-
-        if( ! loadedArtists.some( artist => artist.name === music_library[album].artist ) ){
-          loadedArtists.push({
-              key : "a_" + ARTIST_ID,
-              name: music_library[album].artist
-          });
-          ARTIST_ID++;
-        }
-
-        loadedAlbums.push({
-          key    : album,
-          artist : music_library[album].artist,
-          genre  : music_library[album].genre,
-          title  : music_library[album].title,
-          year   : music_library[album].year,
-          cover  : music_library[album].cover
-        });
+        mapedGenres.push(genreObj)
       }
 
-      // ORDENAR
+      for(const keyArtists in loadedArtists) {
+        const artistObj = {
+          id : keyArtists,
+          ...loadedArtists[keyArtists]
+        }
+        mapedArtists.push(artistObj)
+      }
 
-      loadedGenres.sort(sortGenreArtist);
-      loadedArtists.sort(sortGenreArtist);
+      for(const keyAlbums in loadedAlbums) {
+        const albumObj = {
+          id : keyAlbums,
+          ...loadedAlbums[keyAlbums]
+        }
+        mapedAlbums.push(albumObj)
+      }
+      
+      // SORT
 
-      const sortedAlbums = loadedAlbums.sort(fieldSorter(['genre', 'artist', 'year', 'title']));
+      mapedGenres.sort(sortGenreArtist);
+      mapedArtists.sort(sortGenreArtist);
+      mapedAlbums.sort(fieldSorter(['artist', 'year', 'title']));
 
-      setGenres(
-        loadedGenres.map( genre => ({
-          value : genre.name,
+      setGenres(mapedGenres);
+      setArtists(mapedArtists);
+      setAlbums(mapedAlbums);
+
+      setSelectionGenres( mapedGenres.map( 
+        genre => ({
+          value : genre.key,
           label : genre.name
         }))
       );
 
-      setArtists(
-        loadedArtists.map( artist => ({
-          value : artist.name,
-          label : artist.name
+      setSelectionArtists( mapedArtists.map( 
+        artist => ({
+            value : artist.key,
+            label : artist.name
         })) 
-      );
-      setAlbums(sortedAlbums);
-        
+    );
+
     } catch (error) {
-        setError(error.message);
+      setError(error.message);
     }
-
+    
     setIsLoading(false);
-
-  }, [ARTIST_ID, GENRE_ID]);
-
+    
+  }, []);
+  
   useEffect(() => {
     fetchLibrary();
   }, [fetchLibrary]);
-
+  
+  
   let content = <p>Found no genres!</p>;
   
+  // console.log("GENREROS :: ", genres);
+  // console.log("ARTISTS :: ", artists);
+  // console.log("ALBUMS :: ", albums);
   
   const welcomeParagraph = (
     <div className='ParagrafoBonito'>
@@ -167,7 +179,7 @@ function App() {
               {content}
             </Route>
             <Route path='/genres' exact >
-              <Genres />
+              <Genres genres={genres} />
             </Route>
             <Route path='/genres/:genreId' >
               <Albums albums={albums} albumSource={1} />
@@ -176,7 +188,7 @@ function App() {
               <AddGenre />
             </Route>
             <Route path='/artists' exact>
-              <Artists />
+              <Artists artists={artists} />
             </Route>
             <Route path='/artists/:artistId' >
               <Albums albums={albums} albumSource={2} />
@@ -188,10 +200,10 @@ function App() {
               <Albums albums={albums} artistAlbums={3}/>
             </Route>
             <Route path='/albums/:albumId'>
-              <AlbumDetail />
+              <AlbumDetail albums={albums} />
             </Route>
             <Route path='/new-album'>
-              <AddAlbum genres={genres} artists={artists} />
+              <AddAlbum genres={selectionGenres} artists={selectionArtists} />
             </Route>
             <Route path='/tracks' >
               <Tracks/>
