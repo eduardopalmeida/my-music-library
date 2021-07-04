@@ -9,8 +9,8 @@ const AlbumList = (props) => {
 
         let shortened = text;
 
-        if(text.length > 24) {
-            shortened = text.substring(0, 24) + "...";
+        if(text.length > 26) {
+            shortened = text.substring(0, 23) + "...";
         }
 
         return shortened;
