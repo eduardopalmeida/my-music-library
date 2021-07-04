@@ -4,6 +4,18 @@ import classes from './AlbumList.module.css';
 import AddButton from '../../UI/AddButton';
 
 const AlbumList = (props) => {
+
+    const shortText = (text) => {
+
+        let shortened = text;
+
+        if(text.length > 24) {
+            shortened = text.substring(0, 24) + "...";
+        }
+
+        return shortened;
+    }
+
     return (
         <>
             <AddButton
@@ -19,11 +31,11 @@ const AlbumList = (props) => {
                             key = { album.id }
                         >
                             <Album 
-                                artist = { album.artist }
-                                title =  { album.title }
-                                year  =  { album.year  }
-                                genre =  { album.genre }
-                                cover =  { album.cover }
+                                artist = { album.artist             }
+                                title =  { shortText(album.title)   }
+                                year  =  { album.year               }
+                                genre =  { album.genre              }
+                                cover =  { album.cover              }
                             />
                         </Link>
                     ))
