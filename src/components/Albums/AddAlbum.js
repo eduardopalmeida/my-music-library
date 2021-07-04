@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import classes from './AddAlbum.module.css'
 import validator from 'validator';
 import { useHistory } from 'react-router-dom';
+import { NotificationManager } from 'react-notifications';
 import Select from 'react-select';
 
 const AddAlbum = (props) => {
@@ -32,6 +33,8 @@ const AddAlbum = (props) => {
             return;
         }
         
+        // CHECK IF ALBUM ALREADY EXISTS
+
         // SUBMIT
         
         const elemAlbum = {
@@ -58,10 +61,12 @@ const AddAlbum = (props) => {
               throw new Error(data.message || 'Could not create album.');
             }
             else {
-                history.push('/');
+                NotificationManager.success('Album added.', 'Success!', 3000);
+                history.push('/albums');
             }
         }
         catch(error) {
+            NotificationManager.error('Something went wrong! \n Album not added.', 'Error!', 5000);
             console.log(error);
         }
     }

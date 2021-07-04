@@ -24,6 +24,8 @@ const AddGenre = () => {
             console.log("URL :: ", enteredURL, " INVALID!");
             return;
         }
+
+        // CHECK IF GENRE ALREADY EXISTS
         
         // SUBMIT
         
@@ -47,7 +49,7 @@ const AddGenre = () => {
               throw new Error(data.message || 'Could not create artist.');
             }
             else {
-                history.push('/');
+                history.push('/genres');
             }
         }
         catch(error) {
