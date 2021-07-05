@@ -65,7 +65,7 @@ const AddGenre = () => {
                     type='text'
                     id='name'
                     ref={nameInputRef}
-                    placeholder='Aretha Franklin'
+                    placeholder='Pop/Rock'
                     required
                 ></input>
             </div>

@@ -4,13 +4,23 @@ import Message from '../components/Message';
 import AddButton from '../UI/AddButton';
 
 const Albums = (props) => {
-
     const params = useParams();
     
     let noAlbumsFound = false;
     let albums = null;
     let content = null;
 
+    const linkToHandler = () => {
+        if(props.albumSource === 1) {
+            return ('/new-album?genre=' + params.genreId);
+        }
+        else if(props.albumSource === 2) {
+            return ('/new-album?artist=' + params.artistId);
+        }
+        else {
+            return ('/new-album');
+        }
+    }
 
     // GENRES
     if(props.albumSource === 1) { 
@@ -21,10 +31,10 @@ const Albums = (props) => {
 
             content = (
                 <>
-                    <Message text="No Artists found, please add some."/>
+                    <Message text="No Albums found for this Genre, please add some."/>
                     <AddButton
-                        linkTo  ={'/new-artist'}
-                        linkText= {"Add Artist"}
+                        linkTo  ={linkToHandler}
+                        linkText= {"Add Album"}
                         side = {false}
                     />
                 </>
@@ -41,9 +51,9 @@ const Albums = (props) => {
 
             content = (
                 <>
-                    <Message text="No Albums found, please add some."/>
+                    <Message text="No Albums found for this Artist, please add some."/>
                     <AddButton
-                        linkTo  ={'/new-album'}
+                        linkTo  = {linkToHandler}
                         linkText= {"Add Album"}
                         side = {false}
                     />
@@ -58,7 +68,20 @@ const Albums = (props) => {
     return (
         <>
             {noAlbumsFound && content }
-            {!noAlbumsFound && <AlbumList albums={albums} />}
+            {!noAlbumsFound && 
+                <>
+                    <AddButton
+                        linkTo  = {linkToHandler}
+                        linkText= {"Add Album"}
+                        side = {true}
+                    />
+            
+                    <AlbumList 
+                        albums={albums} 
+                        albumSource={props.albumSource}
+                    />
+                </>
+            }
         </>
     )
 }

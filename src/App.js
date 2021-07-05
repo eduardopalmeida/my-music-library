@@ -105,14 +105,14 @@ function App() {
 
       setSelectionGenres( mapedGenres.map( 
         genre => ({
-          value : genre.key,
+          value : genre.id,
           label : genre.name
         }))
       );
 
       setSelectionArtists( mapedArtists.map( 
         artist => ({
-            value : artist.key,
+            value : artist.id,
             label : artist.name
         })) 
     );
@@ -163,16 +163,16 @@ function App() {
   }
 
   if(isLoading) {
-      content = <p>Loading...</p>;
+      content = (
+          <LoadingSpinner />
+      )
   }
 
   return (
     <div>
       <Layout>
         <Suspense fallback={
-            <div className='centered'>
-              <LoadingSpinner />
-            </div>
+            <LoadingSpinner />
           } >
           <Switch>
             <Route path='/' exact>

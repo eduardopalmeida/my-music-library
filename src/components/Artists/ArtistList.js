@@ -35,12 +35,10 @@ const ArtistList = (props) => {
             }
 
             for(const key in artistsTemp) {
-
                 const artistObject = {
                     id : key,
                     ...artistsTemp[key]
                 }
-
                 transformedTemp.push(artistObject);
             }
 
@@ -63,15 +61,13 @@ const ArtistList = (props) => {
 
     if(isLoading) {
         return (
-            <div className={classes.center}>
                 <LoadingSpinner />
-            </div>
         )
     }
 
     if(error) {
         return (
-            <div className={classes.center}>
+            <div className='centered'>
                 <h1>{error}</h1>
             </div>
         )

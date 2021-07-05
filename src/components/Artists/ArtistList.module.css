@@ -15,13 +15,6 @@
   /* padding: 1rem; */
 }
 
-.center {
-  margin: auto;
-  width: 3%;
-  text-align: center;
-  padding: 10px;
-}
-
 .btnAddArtist {
   text-align : right;
   padding: 1rem;

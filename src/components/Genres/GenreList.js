@@ -35,12 +35,10 @@ const GenreList = (props) => {
             }
       
             for(const key in genresTemp) {
-
                 const genreObject = {
                     id : key,
                     ...genresTemp[key]
                 }
-
                 transformedTemp.push(genreObject);
             }
 
@@ -63,15 +61,13 @@ const GenreList = (props) => {
 
     if(isLoading) {
         return (
-            <div className={classes.center}>
                 <LoadingSpinner />
-            </div>
         )
     }
 
     if(error) {
         return (
-            <div className={classes.center}>
+            <div className='centered'>
                 <h1>{error}</h1>
             </div>
         )

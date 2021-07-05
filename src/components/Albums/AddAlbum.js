@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import classes from './AddAlbum.module.css'
 import validator from 'validator';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { NotificationManager } from 'react-notifications';
 import Select from 'react-select';
 
@@ -13,15 +13,45 @@ const AddAlbum = (props) => {
     const [selectedArtist, setSelectedArtist] = useState({});
     const [selectedGenre, setSelectedGenre] = useState({});
 
-    const history = useHistory(); 
+    const history = useHistory();
+    const location = useLocation();
 
+    const queryParams = new URLSearchParams(location.search);
+
+    const artistSelected = queryParams.get('artist');
+    const genreSelected = queryParams.get('genre');
+    
+    console.log(props.artists);
+    console.log(props.genres);
+
+    let queriedArtist = '';
+    let queriedGenre = '';
+    
+    for( const keyArtist in props.artists ) {
+        if((props.artists[keyArtist]).label === artistSelected) {
+            queriedArtist = props.artists[keyArtist];
+        }
+    }
+    
+    for( const keyGenre in props.genres ) {
+        if((props.genres[keyGenre]).label === genreSelected) {
+            queriedGenre = props.genres[keyGenre];
+        }
+    }
+
+        
+    console.log(queriedArtist); 
+    console.log(queriedGenre); 
+    
+    // if(  )
+
+    
     const formSubmitionHandler = async (event) => {
         event.preventDefault();
 
         const enteredTitle = titleInputRef.current.value;
         const enteredURL = urlInputRef.current.value;
         const enteredyear = yearInputRef.current.value;
-
 
         // VALIDATION
 
@@ -94,14 +124,15 @@ const AddAlbum = (props) => {
                     required
                 ></input>
             </div>
-
+            
             <div className="form-control">
                 <label htmlFor='artist'>Artist</label>
                 <Select 
                     options={props.artists} 
                     onChange={setSelectedArtist}
+                    value={queriedArtist}
                     required
-                />
+                    />
             </div>
 
             <div className="form-control">
@@ -109,6 +140,7 @@ const AddAlbum = (props) => {
                 <Select 
                     options={props.genres} 
                     onChange={setSelectedGenre}
+                    value={queriedGenre}
                     required
                 />
             </div>
@@ -118,7 +150,7 @@ const AddAlbum = (props) => {
                 <input
                     type='number'
                     min={1900}
-                    max={2099}                    
+                    max={2099}
                     id='year'
                     ref={yearInputRef}
                     placeholder='YYYY'

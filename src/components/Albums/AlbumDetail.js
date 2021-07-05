@@ -47,9 +47,7 @@ const AlbumDetail = () => {
     return (
         <>
             <Suspense fallback={
-                <div className='centered'>
-                    <LoadingSpinner />
-                </div>
+                <LoadingSpinner />
             } >
                 { 
                     album ? 
@@ -64,7 +62,7 @@ const AlbumDetail = () => {
                                 <figcaption>{album.genre}</figcaption>
                             </Link>
                         </div>
-                        : <p>Loading...</p>
+                        : <LoadingSpinner />
                 }
             </Suspense>
         </>

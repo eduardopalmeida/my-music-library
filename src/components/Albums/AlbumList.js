@@ -1,7 +1,6 @@
 import Album from './Album';
 import { Link } from 'react-router-dom';
 import classes from './AlbumList.module.css';
-import AddButton from '../../UI/AddButton';
 
 const AlbumList = (props) => {
 
@@ -16,13 +15,20 @@ const AlbumList = (props) => {
         return shortened;
     }
 
+    // const linkToHandler = () => {
+    //     if(props.albumSource === 1) {
+    //         return ('/new-album?genre=' + props.artistId);
+    //     }
+    //     else if(props.albumSource === 2) {
+    //         return ('/new-album?artist=' + props.genreId);
+    //     }
+    //     else {
+    //         return ('/new-album');
+    //     }
+    // }
+
     return (
         <>
-            <AddButton
-                linkTo  ={'/new-album'}
-                linkText= {"Add Album"}
-                side = {true}
-            />
             <ul className={classes.wrapper}>
                 {
                     props.albums.map( (album) => (

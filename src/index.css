@@ -21,6 +21,12 @@ code {
   display: none;
 }
 */
+.centered {
+  margin: auto;
+  width: 3%;
+  text-align: center;
+  padding: 10px;
+}
 
 
 .btn {
