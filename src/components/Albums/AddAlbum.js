@@ -21,9 +21,6 @@ const AddAlbum = (props) => {
     const artistSelected = queryParams.get('artist');
     const genreSelected = queryParams.get('genre');
     
-    console.log(props.artists);
-    console.log(props.genres);
-
     let queriedArtist = '';
     let queriedGenre = '';
     
@@ -39,13 +36,6 @@ const AddAlbum = (props) => {
         }
     }
 
-        
-    console.log(queriedArtist); 
-    console.log(queriedGenre); 
-    
-    // if(  )
-
-    
     const formSubmitionHandler = async (event) => {
         event.preventDefault();
 

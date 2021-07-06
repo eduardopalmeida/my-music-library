@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState, Suspense } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import classes from './AlbumDetail.module.css';
+// import AddButton from '../../UI/AddButton';
 
 const AlbumDetail = () => {
     const [album, setAlbum] = useState(null);
@@ -51,17 +52,24 @@ const AlbumDetail = () => {
             } >
                 { 
                     album ? 
-                        <div className={classes.album}>
-                            <p>{album.title}</p>
-                            <img src={album.cover} alt={album.title} />
-                            <Link to  = {`/artists/${album.artist}`} >
-                                <figcaption>{album.artist}</figcaption>
-                            </Link>
-                            <figcaption>{album.year}</figcaption>
-                            <Link to  = {`/genres/${album.genre}`} >
-                                <figcaption>{album.genre}</figcaption>
-                            </Link>
-                        </div>
+                            <>
+                                {/* <AddButton
+                                    linkTo  = {'/new-album?genre=' + album.genre + '&artist=' + album.artist}
+                                    linkText= {"Add Album"}
+                                    side = {true}
+                                /> */}
+                                <div className={classes.album}>
+                                    <p>{album.title}</p>
+                                    <img src={album.cover} alt={album.title} />
+                                    <Link to  = {`/artists/${album.artist}`} >
+                                        <figcaption>{album.artist}</figcaption>
+                                    </Link>
+                                    <figcaption>{album.year}</figcaption>
+                                    <Link to  = {`/genres/${album.genre}`} >
+                                        <figcaption>{album.genre}</figcaption>
+                                    </Link>
+                                </div>
+                            </>
                         : <LoadingSpinner />
                 }
             </Suspense>
