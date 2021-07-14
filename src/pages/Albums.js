@@ -12,10 +12,10 @@ const Albums = (props) => {
 
     const linkToHandler = () => {
         if(props.albumSource === 1) {
-            return ('/new-album?genre=' + params.genreId);
+            return ( '/new-album?genre=' + params.genreId );
         }
         else if(props.albumSource === 2) {
-            return ('/new-album?artist=' + params.artistId);
+            return ( '/new-album?artist=' + params.artistId );
         }
         else {
             return ('/new-album');
@@ -33,7 +33,7 @@ const Albums = (props) => {
                 <>
                     <Message text="No Albums found for this Genre, please add some."/>
                     <AddButton
-                        linkTo  ={linkToHandler}
+                        linkTo  = {linkToHandler}
                         linkText= {"Add Album"}
                         side = {false}
                     />
@@ -86,4 +86,4 @@ const Albums = (props) => {
     )
 }
 
-export default Albums
+export default Albums;

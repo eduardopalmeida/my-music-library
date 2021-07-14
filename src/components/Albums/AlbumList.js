@@ -15,18 +15,6 @@ const AlbumList = (props) => {
         return shortened;
     }
 
-    // const linkToHandler = () => {
-    //     if(props.albumSource === 1) {
-    //         return ('/new-album?genre=' + props.artistId);
-    //     }
-    //     else if(props.albumSource === 2) {
-    //         return ('/new-album?artist=' + props.genreId);
-    //     }
-    //     else {
-    //         return ('/new-album');
-    //     }
-    // }
-
     return (
         <>
             <ul className={classes.wrapper}>

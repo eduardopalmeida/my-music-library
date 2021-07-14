@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AddButton from '../../UI/AddButton';
 import LoadingSpinner from '../../UI/LoadingSpinner';
@@ -55,6 +56,17 @@ const GenreList = (props) => {
 
     }, []);
 
+ 
+    // REDUX PROTOTYPING
+
+    const starQuantity = useSelector(state => state.starQuantity);
+    const dispatch = useDispatch();
+    const onClickStarHandler = () => {
+        dispatch({type: 'incrementStars'})
+    }
+
+    console.log("starQuantity :: ", starQuantity);
+
     useEffect(() => {
         fetchGenres();
     }, [fetchGenres]);
@@ -95,6 +107,7 @@ const GenreList = (props) => {
                         </Link>
                 ))}
             </ul>
+            <button className='btn' onClick={onClickStarHandler} >STAR</button>
         </>
     )
 }

@@ -43,13 +43,13 @@ function App() {
     return a[o] > b[o] ? dir : a[o] < b[o] ? -(dir) : 0;
   }).reduce((p, n) => p ? p : n, 0);
 
-  const fetchLibrary = useCallback(async () => {
+  const loadAlbums = useCallback(async () => {
     setIsLoading(true);
     setError(null);
       
     try {
       
-      // LOAD
+      // Fetch
 
       const responseGenres  = await fetch(FIREBASE_URL + "genres.json");
       const responseArtists = await fetch(FIREBASE_URL + 'artists.json');
@@ -65,7 +65,7 @@ function App() {
 
       // MAP
 
-      const mapedGenres  = [] ;
+      const mapedGenres  = [];
       const mapedArtists = [];
       const mapedAlbums  = [];
 
@@ -105,17 +105,17 @@ function App() {
 
       setSelectionGenres( mapedGenres.map( 
         genre => ({
-          value : genre.id,
+          value : genre.name,
           label : genre.name
         }))
       );
 
       setSelectionArtists( mapedArtists.map( 
         artist => ({
-            value : artist.id,
+            value : artist.name,
             label : artist.name
         })) 
-    );
+      );
 
     } catch (error) {
       setError(error.message);
@@ -126,8 +126,8 @@ function App() {
   }, []);
   
   useEffect(() => {
-    fetchLibrary();
-  }, [fetchLibrary]);
+    loadAlbums();
+  }, [loadAlbums]);
   
   
   let content = <p>Found no genres!</p>;
@@ -153,8 +153,6 @@ function App() {
   );
 
   if(genres.length > 0) {
-      // notificação a dizer que CARREGOU
-      // console.log("CARREGOU!");
       content = welcomeParagraph;
   }
 

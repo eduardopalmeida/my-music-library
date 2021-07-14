@@ -6,6 +6,7 @@ import { NotificationManager } from 'react-notifications';
 import Select from 'react-select';
 
 const AddAlbum = (props) => {
+
     const titleInputRef = useRef();
     const urlInputRef = useRef();
     const yearInputRef = useRef();
@@ -21,9 +22,11 @@ const AddAlbum = (props) => {
     const artistSelected = queryParams.get('artist');
     const genreSelected = queryParams.get('genre');
     
-    let queriedArtist = '';
-    let queriedGenre = '';
+    let queriedArtist = null;
+    let queriedGenre = null;
     
+    // DOES THE QUERIED ARTIST/GENRE EXIST?
+
     for( const keyArtist in props.artists ) {
         if((props.artists[keyArtist]).label === artistSelected) {
             queriedArtist = props.artists[keyArtist];
@@ -53,18 +56,16 @@ const AddAlbum = (props) => {
             return;
         }
         
-        // CHECK IF ALBUM ALREADY EXISTS
 
         // SUBMIT
         
         const elemAlbum = {
-            title : enteredTitle,
-            cover : enteredURL,
-            artist : selectedArtist.label,
-            genre : selectedGenre.label,
-            year: enteredyear,
+            title :  enteredTitle,
+            cover :  enteredURL,
+            genre :  queriedGenre  ? queriedGenre.label  : selectedGenre.label,
+            artist : queriedArtist ? queriedArtist.label : selectedArtist.label,
+            year: enteredyear
         }
-
 
         try {
             const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/albums.json', {
@@ -120,7 +121,7 @@ const AddAlbum = (props) => {
                 <Select 
                     options={props.artists} 
                     onChange={setSelectedArtist}
-                    value={queriedArtist}
+                    defaultValue={ queriedArtist ? queriedArtist : null }
                     required
                     />
             </div>
@@ -130,7 +131,7 @@ const AddAlbum = (props) => {
                 <Select 
                     options={props.genres} 
                     onChange={setSelectedGenre}
-                    value={queriedGenre}
+                    defaultValue={ queriedGenre ? queriedGenre : null }
                     required
                 />
             </div>
