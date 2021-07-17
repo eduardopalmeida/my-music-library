@@ -1,9 +1,11 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classes from './AddAlbum.module.css'
 import validator from 'validator';
 import { useHistory, useLocation } from 'react-router-dom';
 import { NotificationManager } from 'react-notifications';
 import Select from 'react-select';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchGenreArtistSet } from '../../store/data-actions';
 
 const AddAlbum = (props) => {
 
@@ -17,28 +19,40 @@ const AddAlbum = (props) => {
     const history = useHistory();
     const location = useLocation();
 
+    const FIREBASE_URL = useSelector(state => state.data.url);
+
     const queryParams = new URLSearchParams(location.search);
 
     const artistSelected = queryParams.get('artist');
     const genreSelected = queryParams.get('genre');
     
-    let queriedArtist = null;
     let queriedGenre = null;
+    let queriedArtist = null;
+
+    // REDUX PROTOTYPE
+    const dispatch = useDispatch();
+    const genreSet = useSelector(state => state.data.genreSet);
+    const artistSet = useSelector(state => state.data.artistSet);
     
+    useEffect(() => {
+        dispatch(fetchGenreArtistSet('genres'));
+        dispatch(fetchGenreArtistSet('artists'));
+    }, [dispatch]);
+
     // DOES THE QUERIED ARTIST/GENRE EXIST?
-
-    for( const keyArtist in props.artists ) {
-        if((props.artists[keyArtist]).label === artistSelected) {
-            queriedArtist = props.artists[keyArtist];
+    
+    for (let i = 0; i < genreSet.length; i++) {
+        if( genreSelected === (genreSet[i]).value ) {
+            queriedGenre =  genreSet[i];
         }
     }
     
-    for( const keyGenre in props.genres ) {
-        if((props.genres[keyGenre]).label === genreSelected) {
-            queriedGenre = props.genres[keyGenre];
+    for (let i = 0; i < artistSet.length; i++) {
+        if( artistSelected === (artistSet[i]).value) {
+            queriedArtist = artistSet[i];
         }
     }
-
+    
     const formSubmitionHandler = async (event) => {
         event.preventDefault();
 
@@ -68,7 +82,7 @@ const AddAlbum = (props) => {
         }
 
         try {
-            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/albums.json', {
+            const response = await fetch(FIREBASE_URL + 'albums.json', {
                 method : 'POST',
                 body: JSON.stringify(elemAlbum),
                 headers: {
@@ -119,7 +133,7 @@ const AddAlbum = (props) => {
             <div className="form-control">
                 <label htmlFor='artist'>Artist</label>
                 <Select 
-                    options={props.artists} 
+                    options={artistSet} 
                     onChange={setSelectedArtist}
                     defaultValue={ queriedArtist ? queriedArtist : null }
                     required
@@ -129,7 +143,7 @@ const AddAlbum = (props) => {
             <div className="form-control">
                 <label htmlFor='genre'>Genre</label>
                 <Select 
-                    options={props.genres} 
+                    options={genreSet} 
                     onChange={setSelectedGenre}
                     defaultValue={ queriedGenre ? queriedGenre : null }
                     required

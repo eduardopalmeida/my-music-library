@@ -2,12 +2,14 @@ import { useRef } from 'react';
 import classes from './AddArtist.module.css'
 import validator from 'validator';
 import { useHistory } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import { NotificationManager } from 'react-notifications';
 
 const AddArtist = () => {
     const nameInputRef = useRef('');
     const urlInputRef = useRef('');
+
+    const FIREBASE_URL = useSelector(state => state.data.url);
 
     const history = useHistory(); 
 
@@ -37,8 +39,7 @@ const AddArtist = () => {
         }
 
         try {
-            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/artists.json', {
-            // const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.asd.com/artists.json', {
+            const response = await fetch( FIREBASE_URL + '/artists.json', {
                 method : 'POST',
                 body: JSON.stringify(elemArtist),
                 headers: {

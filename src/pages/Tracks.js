@@ -2,8 +2,8 @@ import React from 'react'
 
 const Tracks = () => {
     return (
-        <div>
-            <h4>Comingo soono!</h4>
+        <div className='centered'>
+            <h1>Comingo soono!</h1>
         </div>
     )
 }

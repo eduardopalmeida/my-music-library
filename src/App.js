@@ -1,141 +1,23 @@
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import React, { Suspense, useCallback, useEffect, useState } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import Layout from './layout/Layout';
 import LoadingSpinner from './UI/LoadingSpinner';
 import AlbumDetail from './components/Albums/AlbumDetail';
 import AddGenre from './components/Genres/AddGenre';
 import AddArtist from './components/Artists/AddArtist';
 import AddAlbum from './components/Albums/AddAlbum';
+import { useDispatch } from 'react-redux';
+import { fetchGAAData, fetchGenreArtistSet } from './store/data-actions';
+import NotFound from './pages/NotFound';
 
 const Genres    = React.lazy( () => import('./pages/Genres'));
 const Artists   = React.lazy( () => import('./pages/Artists'));
 const Albums    = React.lazy( () => import('./pages/Albums'));
 const Tracks    = React.lazy( () => import("./pages/Tracks"));
 
-const FIREBASE_URL = 'https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/';
-
 function App() {
 
-  const [genres, setGenres] = useState([]);
-  const [artists, setArtists] = useState([]);
-  const [albums, setAlbums] = useState([]);
-  
-  const [selectionGenres, setSelectionGenres] = useState({});
-  const [selectionArtists, setSelectionArtists] = useState({});
-  
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const sortGenreArtist = ( a, b ) => {
-    if ( a.name < b.name ){
-      return -1;
-    }
-    if ( a.name > b.name ){
-      return 1;
-    }
-    return 0;
-  }
-
-  const fieldSorter = (fields) => (a, b) => fields.map(o => {
-    let dir = 1;
-    if (o[0] === '-') { dir = -1; o=o.substring(1); }
-    return a[o] > b[o] ? dir : a[o] < b[o] ? -(dir) : 0;
-  }).reduce((p, n) => p ? p : n, 0);
-
-  const loadAlbums = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
-      
-    try {
-      
-      // Fetch
-
-      const responseGenres  = await fetch(FIREBASE_URL + "genres.json");
-      const responseArtists = await fetch(FIREBASE_URL + 'artists.json');
-      const responseAlbums  = await fetch(FIREBASE_URL + "albums.json");
-      
-      const loadedGenres  = await responseGenres.json();
-      const loadedArtists = await responseArtists.json();
-      const loadedAlbums  = await responseAlbums.json();
-
-      if(!responseGenres.ok || !responseArtists.ok || !responseAlbums.ok)  { 
-        throw new Error('Something went wrong!') 
-      }
-
-      // MAP
-
-      const mapedGenres  = [];
-      const mapedArtists = [];
-      const mapedAlbums  = [];
-
-      for(const keyGenres in loadedGenres) {
-        const genreObj = {
-          id : keyGenres,
-          ...loadedGenres[keyGenres]
-        }
-        mapedGenres.push(genreObj)
-      }
-
-      for(const keyArtists in loadedArtists) {
-        const artistObj = {
-          id : keyArtists,
-          ...loadedArtists[keyArtists]
-        }
-        mapedArtists.push(artistObj)
-      }
-
-      for(const keyAlbums in loadedAlbums) {
-        const albumObj = {
-          id : keyAlbums,
-          ...loadedAlbums[keyAlbums]
-        }
-        mapedAlbums.push(albumObj)
-      }
-      
-      // SORT
-
-      mapedGenres.sort(sortGenreArtist);
-      mapedArtists.sort(sortGenreArtist);
-      mapedAlbums.sort(fieldSorter(['artist', 'year', 'title']));
-
-      setGenres(mapedGenres);
-      setArtists(mapedArtists);
-      setAlbums(mapedAlbums);
-
-      setSelectionGenres( mapedGenres.map( 
-        genre => ({
-          value : genre.name,
-          label : genre.name
-        }))
-      );
-
-      setSelectionArtists( mapedArtists.map( 
-        artist => ({
-            value : artist.name,
-            label : artist.name
-        })) 
-      );
-
-    } catch (error) {
-      setError(error.message);
-    }
-    
-    setIsLoading(false);
-    
-  }, []);
-  
-  useEffect(() => {
-    loadAlbums();
-  }, [loadAlbums]);
-  
-  
-  let content = <p>Found no genres!</p>;
-  
-  // console.log("GENREROS :: ", genres);
-  // console.log("ARTISTS :: ", artists);
-  // console.log("ALBUMS :: ", albums);
-  
   const welcomeParagraph = (
     <div className='ParagrafoBonito'>
       <h1>Hi !</h1>
@@ -152,19 +34,14 @@ function App() {
 
   );
 
-  if(genres.length > 0) {
-      content = welcomeParagraph;
-  }
+  const dispatch = useDispatch();
 
-  if(error) {
-      content = welcomeParagraph;
-  }
+  useEffect(() => {
+    dispatch(fetchGAAData());
+    dispatch(fetchGenreArtistSet('genres'));
+    dispatch(fetchGenreArtistSet('artists'));
+  }, [dispatch]);
 
-  if(isLoading) {
-      content = (
-          <LoadingSpinner />
-      )
-  }
 
   return (
     <div>
@@ -174,37 +51,41 @@ function App() {
           } >
           <Switch>
             <Route path='/' exact>
-              {content}
+              {welcomeParagraph}
             </Route>
             <Route path='/genres' exact >
-              <Genres genres={genres} />
+              <Genres />
             </Route>
             <Route path='/genres/:genreId' >
-              <Albums albums={albums} albumSource={1} />
+              {/* <AlbumList albumSource={1} /> */}
+              <Albums albumSource={1} />
             </Route>
             <Route path='/new-genre'>
               <AddGenre />
             </Route>
             <Route path='/artists' exact>
-              <Artists artists={artists} />
+              <Artists />
             </Route>
             <Route path='/artists/:artistId' >
-              <Albums albums={albums} albumSource={2} />
+              <Albums albumSource={2} />
             </Route>
             <Route path='/new-artist'>
               <AddArtist />
             </Route>
             <Route path='/albums' exact>
-              <Albums albums={albums} artistAlbums={3}/>
+              <Albums artistAlbums={3}/>
             </Route>
             <Route path='/albums/:albumId'>
-              <AlbumDetail albums={albums} />
+              <AlbumDetail />
             </Route>
             <Route path='/new-album'>
-              <AddAlbum genres={selectionGenres} artists={selectionArtists} />
+              <AddAlbum />
             </Route>
             <Route path='/tracks' >
               <Tracks/>
+            </Route>
+            <Route path='*'>
+              <NotFound />
             </Route>
           </Switch>
         </Suspense>

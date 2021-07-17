@@ -1,16 +1,8 @@
-import {createStore} from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import dataSlice from './data-slice';
 
-const musicLibraryReducer = (state = {starQuantity: 0} , action) => {
-
-    if(action.type === 'incrementStars') {
-        return {
-            starQuantity : state.starQuantity + 1
-        }
-    }
-
-    return state;
-}
-
-const store = createStore(musicLibraryReducer);
+const store = configureStore({ 
+    reducer : {data : dataSlice.reducer}
+});
 
 export default store;

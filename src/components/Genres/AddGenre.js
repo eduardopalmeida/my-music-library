@@ -2,12 +2,20 @@ import { useRef } from 'react';
 import classes from './AddGenre.module.css'
 import validator from 'validator';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { NotificationManager } from 'react-notifications';
+import { addGAAitem } from '../../store/data-actions';
 
 const AddGenre = () => {
     const nameInputRef = useRef('');
     const urlInputRef = useRef('');
 
     const history = useHistory(); 
+
+    const genresDdata = useSelector(state => state.data.genres)
+    const genresQty = useSelector(state => state.data.genresQty) + 1;
+    const dispatch = useDispatch();
+
 
     const formSubmitionHandler = async (event) => {
         event.preventDefault();
@@ -21,40 +29,56 @@ const AddGenre = () => {
             return;
         }
         else if( !validator.isURL(enteredURL)) {
-            console.log("URL :: ", enteredURL, " INVALID!");
+            NotificationManager.error("The URL you've entereappears to be invalid." , 'Error!', 5000);
+
             return;
         }
 
         // CHECK IF GENRE ALREADY EXISTS
+
+        const exists = genresDdata.find( genre => genre.name === enteredName);
+
+        if(exists) {
+            NotificationManager.warning("Genre " + enteredName + " already exists."  , 'Warning!', 5000);
+            history.push('/genres');
+            return;
+        }
         
         // SUBMIT
         
         const elemGenre = {
+            id : genresQty,
             name : enteredName,
             url : enteredURL
         }
 
-        try {
-            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/genres.json', {
-                method : 'POST',
-                body: JSON.stringify(elemGenre),
-                headers: {
-                    'Content-Type': 'application/json',
-                  }    
-            })
+        dispatch(addGAAitem('genres', elemGenre));
+        history.push('/genres');
 
-            const data = await response.json();
+        // try {
+        //     const response = await fetch(FIREBASE_URL + 'genres.json', {
+        //         method : 'POST',
+        //         body: JSON.stringify(elemGenre),
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //           }    
+        //     })
+
+        //     // const data = await response.json();
           
-            if (!response.ok) {
-              throw new Error(data.message || 'Could not create artist.');
-            }
-            else {
-                history.push('/genres');
-            }
-        }
-        catch(error) {
-            console.log(error);
-        }
+        //     if (!response.ok) {
+        //         NotificationManager.error("Could not create artist." , 'Error!', 5000);
+        //         // throw new Error(data.message || 'Could not create artist.');
+        //     }
+        //     else {
+        //         history.push('/genres');
+        //     }
+        // }
+        // catch(error) {
+        //     console.log(error);
+        // }
+
+
     }
 
     return (

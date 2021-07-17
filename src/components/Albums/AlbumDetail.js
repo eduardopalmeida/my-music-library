@@ -1,49 +1,24 @@
-import { useCallback, useEffect, useState, Suspense } from 'react';
+import { Suspense } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import classes from './AlbumDetail.module.css';
 // import AddButton from '../../UI/AddButton';
 
-const AlbumDetail = () => {
-    const [album, setAlbum] = useState(null);
 
+const AlbumDetail = () => {
     const params = useParams();
     const { albumId } = params;
 
-    // console.log("albumId :: ", albumId);
-    // console.log("URL :: ", 'https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/music_library' + albumId + '.json');
-    // Verificar se é necessário o uso de useCallback
+    const data = useSelector(state => state.data.albums)
+    
+    let albumLoaded = {};
 
-    const fetchAlbum = useCallback(async () => {
-
-        try {
-            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/albums/' + albumId + '.json');
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Could not fetch album.');
-            }
-
-            const loadedAlbum = {
-                artist   : data.artist,
-                genre    : data.genre,
-                title    : data.title,
-                year     : data.year,
-                cover    : data.cover,
-                artistId : data.artistId,
-                genreId  : data.genreId
-            };
-            setAlbum(loadedAlbum);
-
-        } catch (error) {
-            console.log("ERROR :: ", error.message);
+    for( const album in data) {
+        if(data[album].id === albumId) {
+            albumLoaded = data[album];
         }
-    }, [albumId]);
-
-    useEffect(() => {
-        fetchAlbum(albumId);
-    }, [fetchAlbum, albumId]);
-
+    }
 
     return (
         <>
@@ -51,30 +26,25 @@ const AlbumDetail = () => {
                 <LoadingSpinner />
             } >
                 { 
-                    album ? 
-                            <>
-                                {/* <AddButton
-                                    linkTo  = {'/new-album?genre=' + album.genre + '&artist=' + album.artist}
-                                    linkText= {"Add Album"}
-                                    side = {true}
-                                /> */}
-                                <div className={classes.album}>
-                                    <p>{album.title}</p>
-                                    <img src={album.cover} alt={album.title} />
-                                    <Link to  = {`/artists/${album.artist}`} >
-                                        <figcaption>{album.artist}</figcaption>
-                                    </Link>
-                                    <figcaption>{album.year}</figcaption>
-                                    <Link to  = {`/genres/${album.genre}`} >
-                                        <figcaption>{album.genre}</figcaption>
-                                    </Link>
-                                </div>
-                            </>
-                        : <LoadingSpinner />
+                    albumLoaded ? 
+                        <>
+                            <div className={classes.album}>
+                                <p>{albumLoaded.title}</p>
+                                <img src={albumLoaded.cover} alt={albumLoaded.title} />
+                                <Link to  = {`/artists/${albumLoaded.artist}`} >
+                                    <figcaption>{albumLoaded.artist}</figcaption>
+                                </Link>
+                                <figcaption>{albumLoaded.year}</figcaption>
+                                <Link to  = {`/genres/${albumLoaded.genre}`} >
+                                    <figcaption>{albumLoaded.genre}</figcaption>
+                                </Link>
+                            </div>
+                        </>
+                    : <LoadingSpinner />
                 }
             </Suspense>
         </>
-      )
+    )
 }
 
 export default AlbumDetail;

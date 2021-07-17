@@ -3,7 +3,7 @@ import GenreList from "../components/Genres/GenreList"
 const Genres = () => {
 
     return (
-            <GenreList />                
+            <GenreList />
     )
 }
 

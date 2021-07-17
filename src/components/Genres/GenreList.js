@@ -1,90 +1,13 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AddButton from '../../UI/AddButton';
-import LoadingSpinner from '../../UI/LoadingSpinner';
 import Genre from "./Genre";
 import classes from './GenreList.module.css';
 
-const GenreList = (props) => {
-    const [genres, setGenres] = useState([]);
-
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-    const sortGenres = ( a, b ) => {
-        if ( a.name < b.name ){
-          return -1;
-        }
-        if ( a.name > b.name ){
-          return 1;
-        }
-        return 0;
-    }
-
-    const fetchGenres = useCallback(async () => {
-        setIsLoading(true);
-        setError(null);
-
-        try {
-            const response = await fetch('https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/genres.json');
-            const genresTemp = await response.json();
-            const transformedTemp = [];
-
-            if(!response.ok) {
-                throw new Error('Something went wrong!')
-            }
-      
-            for(const key in genresTemp) {
-                const genreObject = {
-                    id : key,
-                    ...genresTemp[key]
-                }
-                transformedTemp.push(genreObject);
-            }
-
-            transformedTemp.sort(sortGenres);
-
-            setGenres(transformedTemp);
-      
-        } catch (error) {
-            setIsLoading(false);
-            setError(error.message);
-        }
-
-        setIsLoading(false);
-
-    }, []);
-
- 
-    // REDUX PROTOTYPING
-
-    const starQuantity = useSelector(state => state.starQuantity);
-    const dispatch = useDispatch();
-    const onClickStarHandler = () => {
-        dispatch({type: 'incrementStars'})
-    }
-
-    console.log("starQuantity :: ", starQuantity);
-
-    useEffect(() => {
-        fetchGenres();
-    }, [fetchGenres]);
-
-    if(isLoading) {
-        return (
-                <LoadingSpinner />
-        )
-    }
-
-    if(error) {
-        return (
-            <div className='centered'>
-                <h1>{error}</h1>
-            </div>
-        )
-    }
-
+const GenreList = () => {
+    
+    const data = useSelector(state => state.data.genres)
+        
     return (
         <>
             <AddButton
@@ -94,7 +17,7 @@ const GenreList = (props) => {
             />
             <ul className={classes.wrapper}>
                 {
-                    genres.map( (genre) => (
+                    data.map( (genre) => (
                         <Link 
                             to  = {`/genres/${genre.name}`}
                             key = { genre.id }
@@ -105,9 +28,9 @@ const GenreList = (props) => {
                                 img_URL = {genre.url}
                             />
                         </Link>
-                ))}
+                    ))
+                }
             </ul>
-            <button className='btn' onClick={onClickStarHandler} >STAR</button>
         </>
     )
 }
