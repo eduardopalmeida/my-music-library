@@ -2,16 +2,20 @@ import { useRef } from 'react';
 import classes from './AddArtist.module.css'
 import validator from 'validator';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NotificationManager } from 'react-notifications';
+import { addGAAitem } from '../../store/data-actions';
+import { refresh } from '../../utils/extras';
+
 
 const AddArtist = () => {
     const nameInputRef = useRef('');
     const urlInputRef = useRef('');
 
-    const FIREBASE_URL = useSelector(state => state.data.url);
+    const history = useHistory();
 
-    const history = useHistory(); 
+    const artistsDdata = useSelector(state => state.data.artists)
+    const dispatch = useDispatch();
 
     const formSubmitionHandler = async (event) => {
         event.preventDefault();
@@ -22,15 +26,24 @@ const AddArtist = () => {
         // VALIDATION
 
         if(enteredName === '' || enteredURL === '') {
+            NotificationManager.warning("empty fields"  , 'Warning!', 5000);
             return;
         }
         else if( !validator.isURL(enteredURL)) {
+            NotificationManager.warning("URL is invalid"  , 'Warning!', 5000);
             console.log("URL :: ", enteredURL, " INVALID!");
             return;
         }
 
         // CHECK IF ARTIST ALREADY EXISTS
         
+        const exists = artistsDdata.find( artist => artist.name === enteredName);
+
+        if(exists) {
+            NotificationManager.warning("Artist  " + enteredName + " already exists."  , 'Warning!', 5000);
+            return;
+        }
+
         // SUBMIT
         
         const elemArtist = {
@@ -38,29 +51,9 @@ const AddArtist = () => {
             url : enteredURL
         }
 
-        try {
-            const response = await fetch( FIREBASE_URL + '/artists.json', {
-                method : 'POST',
-                body: JSON.stringify(elemArtist),
-                headers: {
-                    'Content-Type': 'application/json',
-                  }    
-            })
-
-            const data = await response.json();
-          
-            if (!response.ok) {
-                throw new Error(data.message || 'Could not create artist.');
-            }
-            else {
-                NotificationManager.success('Artist added.', 'Success!', 3000);
-                history.push('/artists');
-            }
-        }
-        catch(error) {
-            NotificationManager.error('Something went wrong! \n Artist not added.', 'Error!', 5000);
-            console.log(error);
-        }
+        dispatch(addGAAitem('artists', elemArtist));
+        
+        refresh('/artists', history);
     }
 
     return (

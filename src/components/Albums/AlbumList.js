@@ -1,9 +1,11 @@
 import Album from './Album';
 import { Link, useParams } from 'react-router-dom';
 import classes from './AlbumList.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AddButton from '../../UI/AddButton';
 import Message from '../../components/Message';
+import { useEffect } from 'react';
+import { fetchGAAData } from '../../store/data-actions';
 
 const AlbumList = (props) => {
     const params = useParams();
@@ -74,6 +76,13 @@ const AlbumList = (props) => {
             )
         }
     }
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchGAAData('albums'));
+      }, [dispatch]);
+      
 
     return (
         <>

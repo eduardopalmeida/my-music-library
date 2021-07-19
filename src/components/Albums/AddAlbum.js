@@ -5,7 +5,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { NotificationManager } from 'react-notifications';
 import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchGenreArtistSet } from '../../store/data-actions';
+import { addGAAitem, fetchGenreArtistSet } from '../../store/data-actions';
+import { refresh } from '../../utils/extras';
 
 const AddAlbum = (props) => {
 
@@ -13,13 +14,12 @@ const AddAlbum = (props) => {
     const urlInputRef = useRef();
     const yearInputRef = useRef();
 
+    const history = useHistory();
+
     const [selectedArtist, setSelectedArtist] = useState({});
     const [selectedGenre, setSelectedGenre] = useState({});
 
-    const history = useHistory();
     const location = useLocation();
-
-    const FIREBASE_URL = useSelector(state => state.data.url);
 
     const queryParams = new URLSearchParams(location.search);
 
@@ -29,10 +29,10 @@ const AddAlbum = (props) => {
     let queriedGenre = null;
     let queriedArtist = null;
 
-    // REDUX PROTOTYPE
-    const dispatch = useDispatch();
+    const albumsDdata = useSelector(state => state.data.albums)
     const genreSet = useSelector(state => state.data.genreSet);
     const artistSet = useSelector(state => state.data.artistSet);
+    const dispatch = useDispatch();
     
     useEffect(() => {
         dispatch(fetchGenreArtistSet('genres'));
@@ -45,12 +45,18 @@ const AddAlbum = (props) => {
         if( genreSelected === (genreSet[i]).value ) {
             queriedGenre =  genreSet[i];
         }
+        // else {
+        //     NotificationManager.warning("queried genre does not exist"  , 'Warning!', 5000);
+        // }
     }
     
     for (let i = 0; i < artistSet.length; i++) {
         if( artistSelected === (artistSet[i]).value) {
             queriedArtist = artistSet[i];
         }
+        // else {
+        //     NotificationManager.warning("queried artist does not exist"  , 'Warning!', 5000);
+        // }
     }
     
     const formSubmitionHandler = async (event) => {
@@ -62,15 +68,24 @@ const AddAlbum = (props) => {
 
         // VALIDATION
 
-        if(enteredTitle === '' || enteredURL === '') {
+        if(enteredTitle === '' || enteredURL === '' || enteredyear === '')  {
+            NotificationManager.warning("empty fields"  , 'Warning!', 5000);
             return;
         }
         else if( !validator.isURL(enteredURL)) {
+            NotificationManager.warning("URL is invalid"  , 'Warning!', 5000);
             console.log("URL :: ", enteredURL, " INVALID!");
             return;
         }
         
+        // CHECK IF ALBUM ALREADY EXISTS
+        const exists = albumsDdata.find( album => album.name === enteredTitle);
 
+        if(exists) {
+            NotificationManager.warning("Album  " + enteredTitle + " already exists."  , 'Warning!', 5000);
+            return;
+        }
+              
         // SUBMIT
         
         const elemAlbum = {
@@ -81,29 +96,8 @@ const AddAlbum = (props) => {
             year: enteredyear
         }
 
-        try {
-            const response = await fetch(FIREBASE_URL + 'albums.json', {
-                method : 'POST',
-                body: JSON.stringify(elemAlbum),
-                headers: {
-                    'Content-Type': 'application/json',
-                  }    
-            })
-
-            const data = await response.json();
-          
-            if (!response.ok) {
-              throw new Error(data.message || 'Could not create album.');
-            }
-            else {
-                NotificationManager.success('Album added.', 'Success!', 3000);
-                history.push('/albums');
-            }
-        }
-        catch(error) {
-            NotificationManager.error('Something went wrong! \n Album not added.', 'Error!', 5000);
-            console.log(error);
-        }
+        dispatch(addGAAitem('albums', elemAlbum));
+        refresh('/albums', history);
     }
 
     return (

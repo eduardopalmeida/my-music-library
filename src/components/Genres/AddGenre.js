@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { NotificationManager } from 'react-notifications';
 import { addGAAitem } from '../../store/data-actions';
+import { refresh } from '../../utils/extras';
 
 const AddGenre = () => {
     const nameInputRef = useRef('');
@@ -13,7 +14,6 @@ const AddGenre = () => {
     const history = useHistory(); 
 
     const genresDdata = useSelector(state => state.data.genres)
-    const genresQty = useSelector(state => state.data.genresQty) + 1;
     const dispatch = useDispatch();
 
 
@@ -40,45 +40,19 @@ const AddGenre = () => {
 
         if(exists) {
             NotificationManager.warning("Genre " + enteredName + " already exists."  , 'Warning!', 5000);
-            history.push('/genres');
             return;
         }
         
         // SUBMIT
         
         const elemGenre = {
-            id : genresQty,
             name : enteredName,
             url : enteredURL
         }
 
         dispatch(addGAAitem('genres', elemGenre));
-        history.push('/genres');
-
-        // try {
-        //     const response = await fetch(FIREBASE_URL + 'genres.json', {
-        //         method : 'POST',
-        //         body: JSON.stringify(elemGenre),
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //           }    
-        //     })
-
-        //     // const data = await response.json();
-          
-        //     if (!response.ok) {
-        //         NotificationManager.error("Could not create artist." , 'Error!', 5000);
-        //         // throw new Error(data.message || 'Could not create artist.');
-        //     }
-        //     else {
-        //         history.push('/genres');
-        //     }
-        // }
-        // catch(error) {
-        //     console.log(error);
-        // }
-
-
+        
+        refresh('/genres', history);
     }
 
     return (

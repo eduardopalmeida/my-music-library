@@ -1,0 +1,528 @@
+{
+  "music_library" : {
+    "albums" : {
+      "-Mepj_xjrRTQ1EkVfsE3" : {
+        "artist" : "Air",
+        "cover" : "https://i.ibb.co/7rTJxQc/Air-1998-Moon-Safari.jpg",
+        "genre" : "Electronica",
+        "title" : "Moon Safari",
+        "year" : "1998"
+      },
+      "-Mepja-6czB5np1_DnxR" : {
+        "artist" : "Air",
+        "cover" : "https://i.ibb.co/Wg6rPrB/Air-2004-Talkie-Walkie.jpg",
+        "genre" : "Electronica",
+        "title" : "Talkie Walkie",
+        "year" : "2004"
+      },
+      "-Mepja8ws-YHQtWtlRHt" : {
+        "artist" : "Air",
+        "cover" : "https://i.ibb.co/7XgTFHT/Air-2012-Le-Voyage-Dans-La-Lune.jpg",
+        "genre" : "Electronica",
+        "title" : "Le Voyage Dans La Lune",
+        "year" : "2012"
+      },
+      "-MepjaBI8sEsVa32aD_d" : {
+        "artist" : "Kraftwerk",
+        "cover" : "https://i.ibb.co/CmvmgVh/Kraftwerk-1974-Autobahn.jpg",
+        "genre" : "Electronica",
+        "title" : "Autobahn",
+        "year" : "1974"
+      },
+      "-MepjaDjLrrhLtzZPLgm" : {
+        "artist" : "Kraftwerk",
+        "cover" : "https://i.ibb.co/8M6R1vn/Kraftwerk-1975-Radio-Activity.jpg",
+        "genre" : "Electronica",
+        "title" : "Radio-Activity",
+        "year" : "1975"
+      },
+      "-MepjaG4Vw0GLETdd2CR" : {
+        "artist" : "Kraftwerk",
+        "cover" : "https://i.ibb.co/9pnRVPJ/Kraftwerk-1977-Trans-Europe-Express.jpg",
+        "genre" : "Electronica",
+        "title" : "Trans-Europe-Express",
+        "year" : "1977"
+      },
+      "-MepjaIRUdB__zHSrQLC" : {
+        "artist" : "Daft Punk",
+        "cover" : "https://i.ibb.co/34RWmFK/Daft-Punk-1997-Homework.jpg",
+        "genre" : "Electronica",
+        "title" : "Homework",
+        "year" : "1997"
+      },
+      "-MepjaKoPXuvPMxBAV41" : {
+        "artist" : "Daft Punk",
+        "cover" : "https://i.ibb.co/s9f3XVf/Daft-Punk-2001-Discovery.jpg",
+        "genre" : "Electronica",
+        "title" : "Discovery",
+        "year" : "2001"
+      },
+      "-MepjaNC0XQH93q1tizJ" : {
+        "artist" : "Daft Punk",
+        "cover" : "https://i.ibb.co/2dsLrFX/Daft-Punk-2013-Random-Access-Memories.jpg",
+        "genre" : "Electronica",
+        "title" : "Random Access Memories",
+        "year" : "2013"
+      },
+      "-MepjaPcA7YkYXl1l59v" : {
+        "artist" : "Herbie Hancock",
+        "cover" : "https://i.ibb.co/RHLWq6z/Herbie-Hancock-1962-Takin-Off.jpg",
+        "genre" : "Jazz",
+        "title" : "Takin' Off",
+        "year" : "1962"
+      },
+      "-MepjaRxGVnsD--PTSOc" : {
+        "artist" : "Herbie Hancock",
+        "cover" : "https://i.ibb.co/R4vqmWt/Herbie-Hancock-1965-Maiden-Voyage.jpg",
+        "genre" : "Jazz",
+        "title" : "Maiden Voyage",
+        "year" : "1965"
+      },
+      "-MepjaUJx5PZToyhoCRy" : {
+        "artist" : "Herbie Hancock",
+        "cover" : "https://i.ibb.co/3WDYF8m/Herbie-Hancock-1973-2-Headhunters.jpg",
+        "genre" : "Jazz",
+        "title" : "Headhunters",
+        "year" : "1973-2"
+      },
+      "-MepjaWeXiQqWGsFFZj1" : {
+        "artist" : "Miles Davis",
+        "cover" : "https://i.ibb.co/r6qbfjv/Miles-Davis-1949-Birth-of-the-Cool.jpg",
+        "genre" : "Jazz",
+        "title" : "Birth of the Cool",
+        "year" : "1949"
+      },
+      "-MepjaZ2tey99rGLcV0o" : {
+        "artist" : "Miles Davis",
+        "cover" : "https://i.ibb.co/ThtmzWT/Miles-Davis-1959-Kind-of-Blue.jpg",
+        "genre" : "Jazz",
+        "title" : "Kind of Blue",
+        "year" : "1959"
+      },
+      "-MepjaaQ91SclgQfkYF4" : {
+        "artist" : "Miles Davis",
+        "cover" : "https://i.ibb.co/WPmHKhP/Miles-Davis-1969-Bitches-Brew.jpg",
+        "genre" : "Jazz",
+        "title" : "Bitches Brew",
+        "year" : "1969"
+      },
+      "-MepjaclP7cwTGq0Ghbf" : {
+        "artist" : "Pat Metheny",
+        "cover" : "https://i.ibb.co/dBrpQRP/Pat-Metheny-1976-Bright-Size-Life.jpg",
+        "genre" : "Jazz",
+        "title" : "Bright Size Life",
+        "year" : "1976"
+      },
+      "-Mepjaf9g0VVULG43Fhf" : {
+        "artist" : "Pat Metheny Group",
+        "cover" : "https://i.ibb.co/mFK37bM/Pat-Metheny-Group-1978-Pat-Metheny-Group.jpg",
+        "genre" : "Jazz",
+        "title" : "Pat Metheny Group",
+        "year" : "1978"
+      },
+      "-MepjahYW46SXTRHR0uK" : {
+        "artist" : "Pat Metheny Group",
+        "cover" : "https://i.ibb.co/Cmy3QDH/Pat-Metheny-Group-1984-First-Circle.jpg",
+        "genre" : "Jazz",
+        "title" : "First Circle",
+        "year" : "1984"
+      },
+      "-Mepjajzi_Q_HYmDfCeJ" : {
+        "artist" : "Sérgio Godinho",
+        "cover" : "https://i.ibb.co/6r7G2WZ/Se-rgio-Godinho-1971-Os-Sobreviventes.jpg",
+        "genre" : "Portuguesa",
+        "title" : "Os Sobreviventes",
+        "year" : "1971"
+      },
+      "-MepjamL6bCaPn7Hl_k1" : {
+        "artist" : "Sérgio Godinho",
+        "cover" : "https://i.ibb.co/ctmT3sv/Se-rgio-Godinho-1972-Pre-Histo-rias.jpg",
+        "genre" : "Portuguesa",
+        "title" : "Pré-Histórias",
+        "year" : "1972"
+      },
+      "-Mepjaojv5Ute-qzFqBX" : {
+        "artist" : "Sérgio Godinho",
+        "cover" : "https://i.ibb.co/FBznfLG/Se-rgio-Godinho-1978-pano-cru.jpg",
+        "genre" : "Portuguesa",
+        "title" : "pano-cru",
+        "year" : "1978"
+      },
+      "-Mepjar3mtG3moQWviPI" : {
+        "artist" : "Clã",
+        "cover" : "https://i.ibb.co/qDghjnN/Cla-1997-Kazoo.jpg",
+        "genre" : "Portuguesa",
+        "title" : "Kazoo",
+        "year" : "1997"
+      },
+      "-MepjatPd9cqCdx8wU4T" : {
+        "artist" : "Clã",
+        "cover" : "https://i.ibb.co/D5VZtQp/Cla-2000-Lustro.jpg",
+        "genre" : "Portuguesa",
+        "title" : "Lustro",
+        "year" : "2000"
+      },
+      "-MepjavnhHix9grpMUTJ" : {
+        "artist" : "Clã",
+        "cover" : "https://i.ibb.co/vZzRd48/Cla-2004-Rosa-Carne.jpg",
+        "genre" : "Portuguesa",
+        "title" : "Rosa Carne",
+        "year" : "2004"
+      },
+      "-Mepjay9wxOUP8V9eJDI" : {
+        "artist" : "Fausto",
+        "cover" : "https://i.ibb.co/JxcfJmR/Fausto-1982-Por-Este-Rio-Acima.jpg",
+        "genre" : "Portuguesa",
+        "title" : "Por Este Rio Acima",
+        "year" : "1982"
+      },
+      "-Mepjb-THLq3Pj1MLBjp" : {
+        "artist" : "Fausto",
+        "cover" : "https://i.ibb.co/8PgSQSD/Fausto-1989-A-Preto-e-Branco.jpg",
+        "genre" : "Portuguesa",
+        "title" : "A Preto e Branco",
+        "year" : "1989"
+      },
+      "-Mepjb1pbO93u8ThE4V3" : {
+        "artist" : "Fausto",
+        "cover" : "https://i.ibb.co/K6ZXpD7/Fausto-1999-Grande-grande-e-a-viagem.jpg",
+        "genre" : "Portuguesa",
+        "title" : "Grande grande é a viagem",
+        "year" : "1999"
+      },
+      "-Mepjb4BX2Q1rNAF-lSH" : {
+        "artist" : "Led Zeppelin",
+        "cover" : "https://i.ibb.co/YL101cm/Led-Zeppelin-1969-1-Led-Zeppelin.jpg",
+        "genre" : "Rock",
+        "title" : "Led Zeppelin",
+        "year" : "1969-1"
+      },
+      "-Mepjb6W3o7h0txFP2Mo" : {
+        "artist" : "Led Zeppelin",
+        "cover" : "https://i.ibb.co/T18rYH3/Led-Zeppelin-1969-2-Led-Zeppelin-II.jpg",
+        "genre" : "Rock",
+        "title" : "Led Zeppelin II",
+        "year" : "1969-2"
+      },
+      "-Mepjb8riWvnXJ-w4Bnz" : {
+        "artist" : "Led Zeppelin",
+        "cover" : "https://i.ibb.co/smCRmyv/Led-Zeppelin-1970-Led-Zeppelin-III.jpg",
+        "genre" : "Rock",
+        "title" : "Led Zeppelin III",
+        "year" : "1970"
+      },
+      "-MepjbBHlJQJHhIVQu6A" : {
+        "artist" : "The Beatles",
+        "cover" : "https://i.ibb.co/X4mqCrx/The-Beatles-1963-1-Please-Please-Me.jpg",
+        "genre" : "Rock",
+        "title" : "Please Please Me",
+        "year" : "1963-1"
+      },
+      "-MepjbDftgQ5TqICUy0o" : {
+        "artist" : "The Beatles",
+        "cover" : "https://i.ibb.co/PxMCYYR/The-Beatles-1967-Sgt-Peppers-Lonely-Hearts-Club-Band.jpg",
+        "genre" : "Rock",
+        "title" : "Sgt Peppers Lonely Hearts Club Band",
+        "year" : "1967"
+      },
+      "-MepjbG0wjfnf_hbfrQt" : {
+        "artist" : "The Beatles",
+        "cover" : "https://i.ibb.co/ZfTTqYZ/The-Beatles-1969-Abbey-Road.jpg",
+        "genre" : "Rock",
+        "title" : "Abbey Road",
+        "year" : "1969"
+      },
+      "-MepjbIO-xegd9_50xi1" : {
+        "artist" : "The Beach Boys",
+        "cover" : "https://i.ibb.co/Rbb1Ggg/The-Beach-Boys-1963-1-Surfer-Girl.jpg",
+        "genre" : "Rock",
+        "title" : "Surfer Girl",
+        "year" : "1963-1"
+      },
+      "-MepjbKhaDv1a4yvvhUS" : {
+        "artist" : "The Beach Boys",
+        "cover" : "https://i.ibb.co/KyzrHJP/The-Beach-Boys-1963-2-Surfin-USA.jpg",
+        "genre" : "Rock",
+        "title" : "Surfin' USA",
+        "year" : "1963-2"
+      },
+      "-MepjbN6H0Hv3CSf5wyv" : {
+        "artist" : "The Beach Boys",
+        "cover" : "https://i.ibb.co/t2fX7S8/The-Beach-Boys-1966-Pet-Sounds.jpg",
+        "genre" : "Rock",
+        "title" : "Pet Sounds",
+        "year" : "1966"
+      },
+      "-MepjbPTMU0YhML0h98o" : {
+        "artist" : "Ray Charles",
+        "cover" : "https://i.ibb.co/SsG2V0L/Ray-Charles-1957-Ray-Charles.jpg",
+        "genre" : "Soul",
+        "title" : "Ray Charles",
+        "year" : "1957"
+      },
+      "-MepjbRpA4iN78MbCthU" : {
+        "artist" : "Ray Charles",
+        "cover" : "https://i.ibb.co/Kx9v9yp/Ray-Charles-1959-1-The-Genius-of-Ray-Charles-jpg.jpg",
+        "genre" : "Soul",
+        "title" : "The Genius of Ray Charles",
+        "year" : "1959-1"
+      },
+      "-MepjbUCCdypPtgBaVT9" : {
+        "artist" : "Ray Charles",
+        "cover" : "https://i.ibb.co/7QGvx9F/Ray-Charles-1959-2-What-d-I-Say-jpg.jpg",
+        "genre" : "Soul",
+        "title" : "What'd I Say",
+        "year" : "1959-2"
+      },
+      "-MepjbWZKr0CCaPBrVMH" : {
+        "artist" : "Al Green",
+        "cover" : "https://i.ibb.co/rvtQzdc/Al-Green-1972-1-Let-s-Stay-Together.jpg",
+        "genre" : "Soul",
+        "title" : "Let's Stay Together",
+        "year" : "1972-1"
+      },
+      "-MepjbZ6ZpQyLCL6bqDt" : {
+        "artist" : "Al Green",
+        "cover" : "https://i.ibb.co/Xk9Dj8v/Al-Green-1972-2-I-m-Still-In-Love-With-You.jpg",
+        "genre" : "Soul",
+        "title" : "I'm Still In Love With You",
+        "year" : "1972-2"
+      },
+      "-MepjbaRBtnLUyMCeqzJ" : {
+        "artist" : "Al Green",
+        "cover" : "https://i.ibb.co/hK2H8Z4/Al-Green-1973-Call-Me-jpg.jpg",
+        "genre" : "Soul",
+        "title" : "Call Me",
+        "year" : "1973"
+      },
+      "-MepjbcoNOqTQDsnPCoJ" : {
+        "artist" : "Otis Redding",
+        "cover" : "https://i.ibb.co/C6MS4hH/Otis-Redding-1965-Otis-Blue.jpg",
+        "genre" : "Soul",
+        "title" : "Otis Blue",
+        "year" : "1965"
+      },
+      "-MepjbfBQhiyhNXebJi5" : {
+        "artist" : "Otis Redding",
+        "cover" : "https://i.ibb.co/6XdfKZm/Otis-Redding-1966-The-Soul-Album.jpg",
+        "genre" : "Soul",
+        "title" : "The Soul Album",
+        "year" : "1966"
+      },
+      "-MepjbhW7J2fn0t9WGRP" : {
+        "artist" : "Otis Redding",
+        "cover" : "https://i.ibb.co/0Zcmmsz/Otis-Redding-1968-The-Dock-of-The-Bay.jpg",
+        "genre" : "Soul",
+        "title" : "The Dock of The Bay",
+        "year" : "1968"
+      },
+      "-MepjbjraBr00sgEjH9j" : {
+        "artist" : "Miles Davis",
+        "cover" : "https://i1.sndcdn.com/artworks-BmPYhy3lr4j0Ly8y-57tdeQ-t500x500.jpg",
+        "genre" : "Jazz",
+        "title" : "In a Silent Way",
+        "year" : "1969"
+      },
+      "-MepjbmED5UEZY1LsFX8" : {
+        "artist" : "Hiatus Kaiyote",
+        "cover" : "https://f4.bcbits.com/img/a1741986296_16.jpg",
+        "genre" : "Soul",
+        "title" : "Mood Valiant",
+        "year" : "2021"
+      },
+      "-MepjbocezBpl1bPXDlP" : {
+        "artist" : "Fleet Foxes",
+        "cover" : "https://upload.wikimedia.org/wikipedia/en/0/01/Fleet_foxes.jpg",
+        "genre" : "Folk",
+        "title" : "Fleet Foxes",
+        "year" : "2008"
+      },
+      "-MepjbqytHqpoOQUv5ZF" : {
+        "artist" : "Bob Dylan",
+        "cover" : "https://efemeridesdoefemello.files.wordpress.com/2017/03/19mar17.jpg?w=768&h=768",
+        "genre" : "Folk",
+        "title" : "Bob Dylan",
+        "year" : "1962"
+      },
+      "-MepjbtMe5DNdRhrVMbn" : {
+        "artist" : "Philip Glass",
+        "cover" : "https://uploads-ssl.webflow.com/5ddbf938cd7d370bb22bffe0/5e9313e365892b9e4a132730_Philip%20Glass%20-%20Glassworks%20.jpg",
+        "genre" : "Classical",
+        "title" : "Glassworks",
+        "year" : "1982"
+      },
+      "-Mepjbvjo9d3P4zDe0qD" : {
+        "artist" : "Return to Forever",
+        "cover" : "https://img.discogs.com/yWZQe4jER8zBIWnLFzAExNsBYkE=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-483057-1449110225-8495.jpeg.jpg",
+        "genre" : "Jazz",
+        "title" : "Where Have I Known You Before",
+        "year" : "1974"
+      },
+      "-Mepjby4jDbTqoeAnz2f" : {
+        "artist" : "Omie Wise",
+        "cover" : "https://f4.bcbits.com/img/a3564411116_10.jpg",
+        "genre" : "Progressive Rock",
+        "title" : "1808",
+        "year" : "2017"
+      },
+      "-Mepjc-QzEF9Tv1eqJVY" : {
+        "artist" : "Chick Corea",
+        "cover" : "https://img.discogs.com/DOVmXZi7Gs4PUqc-X6lRcJa1T1s=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7016280-1460788569-4023.jpeg.jpg",
+        "genre" : "Jazz",
+        "title" : "Now He Sings Now He Sobs",
+        "year" : "1968"
+      },
+      "-Mepjc1jyGOZjF59lQI6" : {
+        "artist" : "Miles Davis",
+        "cover" : "https://images-na.ssl-images-amazon.com/images/I/71%2BHs1do4UL._SL1500_.jpg",
+        "genre" : "Jazz",
+        "title" : "Big Fun",
+        "year" : "1969"
+      }
+    },
+    "artists" : {
+      "-MepkT-D9nRJwgtWMCYR" : {
+        "name" : "Air",
+        "url" : "https://i.ibb.co/fpWzTSG/Air.jpg"
+      },
+      "-MepkT1c0PPQW6GrmHi2" : {
+        "name" : "Al Green",
+        "url" : "https://i.ibb.co/PcySsGY/Al-Green.jpg"
+      },
+      "-MepkT40Oz2xxLdaOYZI" : {
+        "name" : "Clã",
+        "url" : "https://i.ibb.co/tYhsGht/Cla.jpg"
+      },
+      "-MepkT6KBFQpAi6IizYo" : {
+        "name" : "Daft Punk",
+        "url" : "https://i.ibb.co/0sfb3Gw/Daft-Punk.jpg"
+      },
+      "-MepkT8ibuYrEm4Tk8Of" : {
+        "name" : "Fausto",
+        "url" : "https://i.ibb.co/Y8pwBp5/Fausto.jpg"
+      },
+      "-MepkTB1tn5izCnTs4QQ" : {
+        "name" : "Herbie Hancock",
+        "url" : "https://i.ibb.co/9NYY4Tn/Herbie.jpg"
+      },
+      "-MepkTDNRVN24jDFF6Za" : {
+        "name" : "Kraftwerk",
+        "url" : "https://i.ibb.co/DPdP0wf/Kraftwerk.jpg"
+      },
+      "-MepkTFjZDgZ5hduDIT2" : {
+        "name" : "Led Zeppelin",
+        "url" : "https://i.ibb.co/N90tmz4/Led-Zeppelin.jpg"
+      },
+      "-MepkTI3yqhrqk_1jvgT" : {
+        "name" : "Miles Davis",
+        "url" : "https://i.ibb.co/zZPLHp6/Miles-Davis.jpg"
+      },
+      "-MepkTKOZXwckCw-tixh" : {
+        "name" : "Otis Redding",
+        "url" : "https://i.ibb.co/z8h3XMH/Otis-Redding.jpg"
+      },
+      "-MepkTMjlt-pjJs0VD9_" : {
+        "name" : "Pat Metheny",
+        "url" : "https://i.ibb.co/wMZpS3q/Pat-Metheny.jpg"
+      },
+      "-MepkTP5IgzQfs6Ak7fF" : {
+        "name" : "Pat Metheny Group",
+        "url" : "https://i.ibb.co/k8Ln8jZ/Pat-Metheny-Group.jpg"
+      },
+      "-MepkTR_vh86fGcqCBnT" : {
+        "name" : "Ray Charles",
+        "url" : "https://i.ibb.co/BC7GsgG/Ray-Charles.jpg"
+      },
+      "-MepkTTxgbw420D1gFKk" : {
+        "name" : "Sérgio Godinho",
+        "url" : "https://i.ibb.co/1qG4FRt/Se-rgio-Godinho.jpg"
+      },
+      "-MepkTWF-eptZaAP9bKA" : {
+        "name" : "The Beach Boys",
+        "url" : "https://i.ibb.co/ykK49Rj/The-Beach-Boys.jpg"
+      },
+      "-MepkTZDecETybRKG_ML" : {
+        "name" : "The Beatles",
+        "url" : "https://i.ibb.co/R6Xnqzj/The-Beatles.jpg"
+      },
+      "-MepkTaWqxlwGeduT76i" : {
+        "name" : "Elvis Presley",
+        "url" : "https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2020/08/99f1a5c-elvis-presley-1024x768.jpg"
+      },
+      "-MepkTdInKZSTqwPZzgc" : {
+        "name" : "Hiatus Kaiyote",
+        "url" : "https://media.resources.festicket.com/www/artists/hiatus-kaiyote.jpg"
+      },
+      "-MepkTfdeP0qFSRJK2BT" : {
+        "name" : "Fleet Foxes",
+        "url" : "https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/5/5/8/1/5581f1d92c77f4e7f7a87b14dfdfa18a.jpg"
+      },
+      "-MepkThz5NCbx8C1YcTc" : {
+        "name" : "Bob Dylan",
+        "url" : "https://rascunho.com.br/wp-content/uploads/2021/05/bob-dylan-1024x614.jpeg"
+      },
+      "-MepkTkJPrfstJkZUqCQ" : {
+        "name" : "Philip Glass",
+        "url" : "https://medicitv-c.imgix.net/artist/philip-glass_uhPi9s0.jpg?auto=format&q=85"
+      },
+      "-MepkTmePQrWJrU2oHnj" : {
+        "name" : "Return to Forever",
+        "url" : "https://i.ibb.co/rFzxW8s/Return-to-Forever.jpg"
+      },
+      "-MepkTozj3k8TTnryhcm" : {
+        "name" : "Sam Gendel",
+        "url" : "https://img.discogs.com/GQaw-AGze5DJzsDYmcbf4bEvRM8=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-2267386-1522298714-7513.jpeg.jpg"
+      },
+      "-MepkTrMaJExGo78IzLL" : {
+        "name" : "Sam Wilkes",
+        "url" : "https://i1.wp.com/www.passionweiss.com/wp-content/uploads/2019/11/sam-wilkes.jpg"
+      },
+      "-MepkTtk3fOctsnNbISt" : {
+        "name" : "Omie Wise",
+        "url" : "https://f4.bcbits.com/img/0024667220_10.jpg"
+      },
+      "-MepkTw5q43gT_iMd1cN" : {
+        "name" : "Chick Corea",
+        "url" : "https://static01.nyt.com/images/2021/02/15/arts/12corea-playlist1/12corea-playlist1-mediumSquareAt3X.jpg"
+      }
+    },
+    "genres" : {
+      "-MepkMDpBP4NYfvjzxpu" : {
+        "name" : "Electronica",
+        "url" : "https://i.ibb.co/tC74ppK/Electronica.jpg"
+      },
+      "-MepkMGCnjI8fljSQ_6M" : {
+        "name" : "Jazz",
+        "url" : "https://i.ibb.co/w6sVS4c/Jazz.jpg"
+      },
+      "-MepkMIWebxM9WOoca_X" : {
+        "name" : "Portuguesa",
+        "url" : "https://i.ibb.co/J5f2JB4/Portuguesa.jpg"
+      },
+      "-MepkMKulWG-4z25LF1j" : {
+        "name" : "Rock",
+        "url" : "https://i.ibb.co/jHrh1FT/Rock.jpg"
+      },
+      "-MepkMNFHeck2czHZyHt" : {
+        "name" : "Soul",
+        "url" : "https://i.ibb.co/688CLX8/CIRCA-1968-Soul-singer-Aretha-Franklin-performs-onstage-in-circa-1968-Photo-by-Michael-Ochs-Archives.jpg"
+      },
+      "-MepkMPbh55EX63WQBky" : {
+        "name" : "Reggae",
+        "url" : "https://i.ibb.co/G5yqCPb/reggae.jpg"
+      },
+      "-MepkMRylKKKbZSGXD3F" : {
+        "name" : "Folk",
+        "url" : "https://routenote.com/blog/wp-content/uploads/2021/01/zekeriya-sen-4wlRmtvcic0-unsplash-1280x960.jpg"
+      },
+      "-MepkMUIujof9bbVwX6x" : {
+        "name" : "Classical",
+        "url" : "https://www.studyfinds.org/wp-content/uploads/2020/05/AdobeStock_339859118-scaled.jpeg"
+      },
+      "-MepkMWbJp3fvd80DnS7" : {
+        "name" : "Progressive Rock",
+        "url" : "https://i.pinimg.com/originals/91/fa/d2/91fad2672c93e7e574bcadd1c6047f7c.jpg"
+      }
+    }
+  }
+}
