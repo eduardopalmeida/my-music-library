@@ -1,12 +1,14 @@
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import Layout from './layout/Layout';
 import LoadingSpinner from './UI/LoadingSpinner';
 import AlbumDetail from './components/Albums/AlbumDetail';
 import AddGenre from './components/Genres/AddGenre';
 import AddArtist from './components/Artists/AddArtist';
 import AddAlbum from './components/Albums/AddAlbum';
+import { useDispatch } from 'react-redux';
+import { fetchGenreArtistSet } from './store/data-actions';
 import NotFound from './pages/NotFound';
 
 const Genres    = React.lazy( () => import('./pages/Genres'));
@@ -31,6 +33,14 @@ function App() {
     </div>
 
   );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGenreArtistSet('genres'));
+    dispatch(fetchGenreArtistSet('artists'));
+  }, [dispatch]);
+
 
   return (
     <div>

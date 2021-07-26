@@ -12,9 +12,9 @@
   }
   
   .quadradoGenero img {
-    border-radius: 10px;
-    width: 300px;
-    height: 300px;
+    border-radius: 7.5px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
   }
   

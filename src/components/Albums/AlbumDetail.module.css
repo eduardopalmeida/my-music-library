@@ -2,19 +2,20 @@
     background-color: #36557277;
     color: rgb(0, 0, 0);
     border-radius: 6px;
-    padding: 3rem;
+    padding: 2rem;
     margin: 3rem auto;
     width: 90%;
-    max-width: 40rem;
+    max-width: 35rem;
   }
   
   .album img {
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
   }
   
   .album p {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin: 1;
   }
   
   .album figcaption {

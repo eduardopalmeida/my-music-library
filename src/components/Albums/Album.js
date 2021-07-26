@@ -1,18 +1,18 @@
-import classes from './Album.module.css';
+import classes from '../GAA.module.css';
 
 const Album = (props) => {
     return (
         <li className={classes.album}>
             <div>
-                <h2>{props.artist}</h2>
+                <h3>{props.artist}</h3>
                 <img 
                     src={props.cover}
                     alt={props.title}
                 />
                 <div>
-                    <h2>{props.title}</h2>
-                    <h4>{props.year}</h4>
-                    <h3>{props.genre}</h3>
+                    <h3>{props.title}</h3>
+                    <h5>{props.year}</h5>
+                    <h4>{props.genre}</h4>
                 </div>
             </div>
         </li>

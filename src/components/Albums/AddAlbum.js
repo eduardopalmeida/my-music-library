@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import classes from './AddAlbum.module.css'
 import validator from 'validator';
 import { useHistory, useLocation } from 'react-router-dom';
 import { NotificationManager } from 'react-notifications';
 import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
-import { addGAAitem, fetchGenreArtistSet } from '../../store/data-actions';
+import { addGAAitem } from '../../store/data-actions';
 import { refresh } from '../../utils/extras';
 
 const AddAlbum = (props) => {
@@ -34,11 +34,6 @@ const AddAlbum = (props) => {
     const artistSet = useSelector(state => state.data.artistSet);
     const dispatch = useDispatch();
     
-    useEffect(() => {
-        dispatch(fetchGenreArtistSet('genres'));
-        dispatch(fetchGenreArtistSet('artists'));
-    }, [dispatch]);
-
     // DOES THE QUERIED ARTIST/GENRE EXIST?
     
     for (let i = 0; i < genreSet.length; i++) {

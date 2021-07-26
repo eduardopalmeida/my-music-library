@@ -1,8 +1,9 @@
-import classes from './Artist.module.css';
+import classes from '../GAA.module.css';
+
 
 const Artist = (props) => {
     return (
-        <li className={classes.quadradoArtista}>
+        <li className={classes.quadrado}>
             <img 
                 src={props.img_URL}
                 alt={props.name}

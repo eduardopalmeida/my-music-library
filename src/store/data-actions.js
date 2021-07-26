@@ -1,6 +1,6 @@
 import { dataSliceActions } from "./data-slice";
 import { NotificationManager } from 'react-notifications';
-import { fieldSorter } from '../../utils/extras';
+import { fieldSorter } from '../utils/extras';
 
 const FIREBASE_URL = 'https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/';
 
@@ -35,8 +35,6 @@ export const fetchGAAData = (typeOfData) => {
                 });
             }
             
-            console.log("transformedData :: ", transformedData);
-
             if(typeOfData === 'genres') {
                 dispatch(dataSliceActions.replaceGenres({
                     genres  : transformedData.sort(fieldSorter(['name']))   || {}
@@ -58,6 +56,35 @@ export const fetchGAAData = (typeOfData) => {
         }
     }
 }
+
+/*
+export const fetchAlbumData = (albumId) => {
+    return async () => {
+
+        const fetchAlbum = async () => {
+            const response = await fetch(FIREBASE_URL + 'music_library/albums/' + albumId + '.json');
+
+            if(!response.ok) {
+                throw new Error('Could not fetch music_library data!');
+            }
+            
+            const data = await response.json();
+            
+            return data;
+        }
+    
+        try {
+            const album = await fetchAlbum(albumId);
+
+            return album;
+
+        }
+        catch(e){
+            NotificationManager.error('Could not retrieve album data.' , 'Error!', 5000);
+        }
+    }
+}
+*/
 
 export const fetchGenreArtistSet = (typeOfDataSet) => {
 
@@ -115,10 +142,8 @@ export const fetchGenreArtistSet = (typeOfDataSet) => {
 
 export const addGAAitem = (typeOfData, dataGAA) => {
 
-    return async (dispatch) => {
+    return async () => {
         
-        console.log("addGAAitem(", typeOfData, ", ", dataGAA, ")");
-
         const addItem = async () => {
             let elem = {};
 
@@ -144,7 +169,7 @@ export const addGAAitem = (typeOfData, dataGAA) => {
                   }   
             });
 
-            const data = await response.json();
+            // const data = await response.json();
 
             if(!response.ok) {
                 NotificationManager.error('Could not add ' + typeOfData.substring(0, typeOfData.length -1), 'Error!', 5000);

@@ -10,14 +10,8 @@ const AlbumDetail = () => {
 
     const data = useSelector(state => state.data.albums)
     
-    let albumLoaded = {};
-
-    for( const album in data) {
-        if(data[album].id === albumId) {
-            albumLoaded = data[album];
-        }
-    }
-
+    let albumLoaded = data.find(album => album.id === albumId);
+    
     return (
         <>
             <Suspense fallback={

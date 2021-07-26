@@ -1,23 +1,15 @@
 import Album from './Album';
 import { Link, useParams } from 'react-router-dom';
-import classes from './AlbumList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import AddButton from '../../UI/AddButton';
 import Message from '../../components/Message';
 import { useEffect } from 'react';
 import { fetchGAAData } from '../../store/data-actions';
+import classes from '../GAAlist.module.css';
+import { shortText } from '../../utils/extras';
 
 const AlbumList = (props) => {
     const params = useParams();
-
-    const shortText = (text) => {
-        let shortened = text;
-
-        if(text.length > 26) {
-            shortened = text.substring(0, 23) + "...";
-        }
-        return shortened;
-    }
 
     const linkToHandler = () => {
         if(props.albumSource === 1) {
@@ -66,7 +58,7 @@ const AlbumList = (props) => {
 
             content = (
                 <>
-                    <Message text="No Albums found for this Artist  , please add some."/>
+                    <Message text="No Albums found for this Artist, please add some."/>
                     <AddButton
                         linkTo  = {linkToHandler}
                         linkText= {"Add Album"}
@@ -83,7 +75,6 @@ const AlbumList = (props) => {
         dispatch(fetchGAAData('albums'));
       }, [dispatch]);
       
-
     return (
         <>
             {noAlbumsFound && content }
@@ -103,7 +94,7 @@ const AlbumList = (props) => {
                                 >
                                     <Album 
                                         artist = { album.artist             }
-                                        title =  { shortText(album.title)   }
+                                        title =  { shortText(album.title, 20)   }
                                         year  =  { album.year               }
                                         genre =  { album.genre              }
                                         cover =  { album.cover              }

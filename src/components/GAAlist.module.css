@@ -1,0 +1,27 @@
+.wrapper {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 1.25em;
+    
+    margin: 0;
+    padding: 0;
+  
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;  
+}
+
+.center {
+  margin: auto;
+  width: 3%;
+  text-align: center;
+  padding: 10px;
+}
+
+.btnAddGenre {
+  text-align : right;
+  padding: 1rem;
+
+  margin: 1rem;
+}
