@@ -24,7 +24,7 @@ const dataSlice = createSlice({
             state.albums = action.payload.albums;
         },
         replaceCurrAlbum(state, action) {
-            state.currAlbum = action.payload.albumContent;
+            state.currAlbum = action.payload;
         },
         currAlbumLike(state, action) {
             state.currAlbum = {

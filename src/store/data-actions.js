@@ -27,7 +27,6 @@ export const fetchGAAData = (typeOfData) => {
             const transformedData = [];
             
             for (const key in data) {
-                
                 transformedData.push({
                     id: key,
                     ...data[key],
@@ -63,7 +62,7 @@ export const fetchAlbumData = (albumId) => {
             const response = await fetch(FIREBASE_URL + 'music_library/albums/' + albumId + '.json');
 
             if(!response.ok) {
-                throw new Error('Could not fetch music_library data!');
+                throw new Error('Could not fetch Album' + albumId + 'data!');
             }
             
             const data = await response.json();
@@ -74,16 +73,11 @@ export const fetchAlbumData = (albumId) => {
         try {
             const album = await fetchAlbum(albumId);
 
-            // console.log("albumId :: ", albumId);
-            // console.log("album :: ", album);
-
             dispatch(dataSliceActions.replaceCurrAlbum({
-                albumId: albumId,
-                albumContent : album
+                ...album
             }));
 
             return album;
-
         }
         catch(e){
             NotificationManager.error('Could not retrieve album data.' , 'Error!', 5000);
@@ -182,6 +176,8 @@ export const addLike = (albumKey, valor) => {
     return async (dispatch) => {
 
         const addLikeInc = async () => {
+
+            console.log("QUANTOS :: ", valor)
 
             const response = await fetch( FIREBASE_URL +  'music_library/albums/' + albumKey + '/like.json', {
                 method : 'PUT',

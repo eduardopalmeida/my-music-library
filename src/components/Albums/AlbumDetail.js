@@ -1,7 +1,7 @@
 import { Suspense, useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { addDislike, addLike, fetchAlbumData } from '../../store/data-actions';
+import { addDislike, addLike } from '../../store/data-actions';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import classes from './AlbumDetail.module.css';
 
@@ -9,27 +9,38 @@ const AlbumDetail = () => {
     const params = useParams();
     const { albumId } = params;
 
-    let albumLoaded = useSelector(state => state.data.currAlbum);
-    const dispatch = useDispatch();
-    
-    const albumLikeHandler = useCallback(() => {
-        setlikes(albumLoaded.like + 1)
-        dispatch( addLike(albumId,      albumLoaded.like + 1) );
-        dispatch(fetchAlbumData(albumId));
-    }, [dispatch, albumId, albumLoaded]);
-    
-    const albumDisikeHandler = useCallback(() => {
-        setdislikes(albumLoaded.dislike + 1)
-        dispatch( addDislike(albumId,   albumLoaded.dislike + 1) );
-        dispatch(fetchAlbumData(albumId));
-    }, [dispatch, albumId, albumLoaded]);
+    let albums = useSelector(state => state.data.albums);
 
-    const [likes, setlikes]         = useState( albumLoaded.like     );
-    const [dislikes, setdislikes]   = useState( albumLoaded.dislike  );
-    
+    let albumLoaded = albums.find(album => album.id === albumId);
+
+    console.log("albumLoaded : ", albumLoaded);
+
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        dispatch(fetchAlbumData(albumId));
-    }, [dispatch, albumId]);
+        // dispatch(fetchAlbumData(albumId));
+        
+        if(albumLoaded !== undefined) {
+            setlikes(albumLoaded.like);
+            setdislikes(albumLoaded.dislike);
+        }
+    }, [albumLoaded]);
+
+    const [likes, setlikes]         = useState( 0 );
+    const [dislikes, setdislikes]   = useState( 0 );
+    
+    const albumLikeHandler = () => {
+        dispatch( addLike(albumId, albumLoaded.like + 1) );
+        setlikes(likes + 1);
+        // dispatch(fetchAlbumData(albumId));
+    };//, [dispatch, albumId, likes, albumLoaded.like]);
+    
+    const albumDisikeHandler = () => {
+        dispatch( addDislike(albumId, albumLoaded.dislike + 1) );
+        setdislikes(dislikes + 1);
+        // dispatch(fetchAlbumData(albumId));
+    };//, [dispatch, albumId, dislikes, albumLoaded.dislike]);
+
     
     return (
         <>
