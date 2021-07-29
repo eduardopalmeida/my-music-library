@@ -88,7 +88,9 @@ const AddAlbum = (props) => {
             cover :  enteredURL,
             genre :  queriedGenre  ? queriedGenre.label  : selectedGenre.label,
             artist : queriedArtist ? queriedArtist.label : selectedArtist.label,
-            year: enteredyear
+            year: enteredyear,
+            like: 0,
+            dislike: 0
         }
 
         dispatch(addGAAitem('albums', elemAlbum));
@@ -118,7 +120,6 @@ const AddAlbum = (props) => {
                     required
                 ></input>
             </div>
-            
             <div className="form-control">
                 <label htmlFor='artist'>Artist</label>
                 <Select 
@@ -128,7 +129,6 @@ const AddAlbum = (props) => {
                     required
                     />
             </div>
-
             <div className="form-control">
                 <label htmlFor='genre'>Genre</label>
                 <Select 
@@ -138,7 +138,6 @@ const AddAlbum = (props) => {
                     required
                 />
             </div>
-
             <div className="form-control">
                 <label htmlFor='name'>Release Year</label>
                 <input

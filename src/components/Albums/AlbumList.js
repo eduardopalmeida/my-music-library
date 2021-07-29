@@ -74,7 +74,7 @@ const AlbumList = (props) => {
     useEffect(() => {
         dispatch(fetchGAAData('albums'));
       }, [dispatch]);
-      
+
     return (
         <>
             {noAlbumsFound && content }

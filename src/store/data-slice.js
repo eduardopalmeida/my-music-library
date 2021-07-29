@@ -6,6 +6,7 @@ const initialState = {
     albums : [],
     genreSet : [],
     artistSet : [],
+    currAlbum : {},
     url : 'https://edpalmeida-my-music-library-1-default-rtdb.firebaseio.com/'
 }
 
@@ -13,11 +14,6 @@ const dataSlice = createSlice({
     name : 'data',
     initialState,
     reducers : {
-        replaceGAA(state, action) {
-            state.genres        = action.payload.genres;
-            state.artists       = action.payload.artists;
-            state.albums        = action.payload.albums;
-        },
         replaceGenres(state, action) {
             state.genres = action.payload.genres;
         },
@@ -26,6 +22,21 @@ const dataSlice = createSlice({
         },
         replaceAlbums(state, action) {
             state.albums = action.payload.albums;
+        },
+        replaceCurrAlbum(state, action) {
+            state.currAlbum = action.payload.albumContent;
+        },
+        currAlbumLike(state, action) {
+            state.currAlbum = {
+                ...state.currAlbum,
+                like : state.currAlbum.like + 1
+            };
+        },
+        currAlbumDislike(state, action) {
+            state.currAlbum = {
+                ...state.currAlbum,
+                dislike : state.currAlbum.dislike + 1
+            };
         },
         replaceGenresSet(state, action) {
             state.genreSet = action.payload.genreSet;

@@ -56,7 +56,6 @@ function App() {
               <Genres />
             </Route>
             <Route path='/genres/:genreId' >
-              {/* <AlbumList albumSource={1} /> */}
               <Albums albumSource={1} />
             </Route>
             <Route path='/new-genre'>

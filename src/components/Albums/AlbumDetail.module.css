@@ -24,3 +24,33 @@
     text-align: right;
     color: #2c406d;
   }
+
+  .btnLike {
+    background-color: #97cfb5;
+    font-size:large;
+    color: white;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    border: 2px solid #11acac;
+    cursor: pointer;
+  }
+  
+  .btnLike:hover,
+  .btnLike:active {
+    background-color: #29a069;
+  }
+
+  .btnDislike {
+    background-color: #cf9797;
+    font-size:large;
+    color: white;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    border: 2px solid #11acac;
+    cursor: pointer;
+  }
+  
+  .btnDislike:hover,
+  .btnDislike:active {
+    background-color: #a02929;
+  }
