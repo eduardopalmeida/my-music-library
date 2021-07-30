@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { fetchGAAData } from '../../store/data-actions';
 import classes from '../GAAlist.module.css';
 import { shortText } from '../../utils/extras';
+import LoadingSpinner from '../../UI/LoadingSpinner';
 
 const AlbumList = (props) => {
     const params = useParams();
@@ -23,6 +24,7 @@ const AlbumList = (props) => {
         }
     }
 
+    let checking = true;
     let noAlbumsFound = false;
     let content = null;
 
@@ -35,7 +37,7 @@ const AlbumList = (props) => {
 
         if(filteredData.length === 0) {
             noAlbumsFound = true;
-
+            
             content = (
                 <>
                     <Message text="No Albums found for this Genre, please add some."/>
@@ -43,7 +45,7 @@ const AlbumList = (props) => {
                         linkTo  = {linkToHandler}
                         linkText= {"Add Album"}
                         side = {false}
-                    />
+                        />
                 </>
             )
         }
@@ -52,6 +54,8 @@ const AlbumList = (props) => {
     // ARTISTS FILTERING
     if(props.albumSource === 2) { 
         filteredData = data.filter( album => album.artist === params.artistId );
+
+        checking = false;
 
         if(filteredData.length === 0) {
             noAlbumsFound = true;
@@ -73,37 +77,45 @@ const AlbumList = (props) => {
 
     useEffect(() => {
         dispatch(fetchGAAData('albums'));
-      }, [dispatch]);
+    }, [dispatch]);
+
+    checking = false;
 
     return (
         <>
-            {noAlbumsFound && content }
-            {!noAlbumsFound && 
-                <>
-                    <AddButton
-                        linkTo  = {linkToHandler}
-                        linkText= {"Add Album"}
-                        side = {true}
-                        />
-                    <ul className={classes.wrapper}>
-                        {
-                            filteredData.map( (album) => (
-                                <Link 
-                                to  = {`/albums/${album.id}`}
-                                key = { album.id }
-                                >
-                                    <Album 
-                                        artist = { album.artist             }
-                                        title =  { shortText(album.title, 20)   }
-                                        year  =  { album.year               }
-                                        genre =  { album.genre              }
-                                        cover =  { album.cover              }
-                                        />
-                                </Link>
-                            ))
-                        }
-                    </ul>
-                </>
+            {
+                !checking ? 
+                    <>
+                        {noAlbumsFound && content }
+                        {!noAlbumsFound && 
+                            <>
+                                <AddButton
+                                    linkTo  = {linkToHandler}
+                                    linkText= {"Add Album"}
+                                    side = {true}
+                                    />
+                                <ul className={classes.wrapper}>
+                                    {
+                                        filteredData.map( (album) => (
+                                            <Link 
+                                            to  = {`/albums/${album.id}`}
+                                            key = { album.id }
+                                            >
+                                                <Album 
+                                                    artist = { album.artist                 }
+                                                    title =  { shortText(album.title, 20)   }
+                                                    year  =  { album.year                   }
+                                                    genre =  { album.genre                  }
+                                                    cover =  { album.cover                  }
+                                                    />
+                                            </Link>
+                                        ))
+                                    }
+                                </ul>
+                            </>
+                        } 
+                    </>
+                : <LoadingSpinner />
             }
         </>
     );

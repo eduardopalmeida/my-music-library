@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addDislike, addLike } from '../../store/data-actions';
@@ -18,8 +18,6 @@ const AlbumDetail = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // dispatch(fetchAlbumData(albumId));
-        
         if(albumLoaded !== undefined) {
             setlikes(albumLoaded.like);
             setdislikes(albumLoaded.dislike);
@@ -30,17 +28,14 @@ const AlbumDetail = () => {
     const [dislikes, setdislikes]   = useState( 0 );
     
     const albumLikeHandler = () => {
-        dispatch( addLike(albumId, albumLoaded.like + 1) );
+        dispatch( addLike(albumId, likes + 1) );
         setlikes(likes + 1);
-        // dispatch(fetchAlbumData(albumId));
-    };//, [dispatch, albumId, likes, albumLoaded.like]);
-    
-    const albumDisikeHandler = () => {
-        dispatch( addDislike(albumId, albumLoaded.dislike + 1) );
-        setdislikes(dislikes + 1);
-        // dispatch(fetchAlbumData(albumId));
-    };//, [dispatch, albumId, dislikes, albumLoaded.dislike]);
+    }
 
+    const albumDisikeHandler = () => {
+        dispatch( addDislike(albumId, dislikes + 1) );
+        setdislikes(dislikes + 1);
+    }
     
     return (
         <>

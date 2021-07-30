@@ -173,7 +173,7 @@ export const addGAAitem = (typeOfData, dataGAA) => {
 
 export const addLike = (albumKey, valor) => {
 
-    return async (dispatch) => {
+    return async () => {
 
         const addLikeInc = async () => {
 
@@ -193,7 +193,7 @@ export const addLike = (albumKey, valor) => {
                 // throw new Error('Could not fetch music_library data!');
             }
 
-            dispatch(dataSliceActions.currAlbumLike());
+            // dispatch(dataSliceActions.currAlbumLike());
 
             NotificationManager.success('', 'Like!', 3000);
         }
@@ -209,7 +209,7 @@ export const addLike = (albumKey, valor) => {
 
 export const addDislike = (albumKey, valor) => {
 
-    return async (dispatch) => {
+    return async () => {
 
         const addDislikeInc = async () => {
 
@@ -230,7 +230,7 @@ export const addDislike = (albumKey, valor) => {
             NotificationManager.success('', 'Dislike!', 3000);
         }
 
-        dispatch(dataSliceActions.currAlbumDislike());
+        // dispatch(dataSliceActions.currAlbumDislike());
         
         try {
             await addDislikeInc();

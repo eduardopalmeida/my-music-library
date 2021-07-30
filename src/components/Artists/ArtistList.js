@@ -5,6 +5,7 @@ import AddButton from '../../UI/AddButton';
 import classes from '../GAAlist.module.css';
 import { useEffect } from 'react';
 import { fetchGAAData, fetchGenreArtistSet } from '../../store/data-actions';
+import LoadingSpinner from '../../UI/LoadingSpinner';
 
 const ArtistList = (props) => {
     const dispatch = useDispatch();
@@ -16,29 +17,31 @@ const ArtistList = (props) => {
     }, [dispatch]);        
 
     return (
-        <>
-            <AddButton
-                linkTo  ={'/new-artist'}
-                linkText= {"Add Artist"}
-                side = {true}
-            />
-            <ul className={classes.wrapper}>
-                {
-                    data.map( (artist) => (
-                        <Link
-                            to = {`/artists/${artist.name}`}
-                            key = { artist.id }
-                        >
-                            <Artist 
-                                key     = {artist.id}
-                                name    = {artist.name}
-                                img_URL = {artist.url}
-                            />
-                        </Link>
-                    ))
-                }
-            </ul>
-        </>
+        data ? 
+            <>
+                <AddButton
+                    linkTo  ={'/new-artist'}
+                    linkText= {"Add Artist"}
+                    side = {true}
+                />
+                <ul className={classes.wrapper}>
+                    {
+                        data.map( (artist) => (
+                            <Link
+                                to = {`/artists/${artist.name}`}
+                                key = { artist.id }
+                            >
+                                <Artist 
+                                    key     = {artist.id}
+                                    name    = {artist.name}
+                                    img_URL = {artist.url}
+                                />
+                            </Link>
+                        ))
+                    }
+                </ul>
+            </> 
+        : <LoadingSpinner />
     );
 }
 
