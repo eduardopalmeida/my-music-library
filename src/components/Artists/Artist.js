@@ -1,6 +1,5 @@
 import classes from '../GAA.module.css';
 
-
 const Artist = (props) => {
     return (
         <li className={classes.quadrado}>

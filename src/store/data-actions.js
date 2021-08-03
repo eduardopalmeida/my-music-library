@@ -176,8 +176,6 @@ export const addLike = (albumKey, valor) => {
     return async () => {
 
         const addLikeInc = async () => {
-            console.log("QUANTOS :: ", valor)
-
             const response = await fetch( FIREBASE_URL +  'music_library/albums/' + albumKey + '/like.json', {
                 method : 'PUT',
                 body: JSON.stringify(valor),

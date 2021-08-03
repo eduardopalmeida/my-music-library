@@ -3,7 +3,7 @@ import ArtistList from '../components/Artists/ArtistList';
 const Artists = () => {
 
     return (
-            <ArtistList />
+        <ArtistList />
     )
 }
 
