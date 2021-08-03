@@ -10,6 +10,7 @@ import AddAlbum from './components/Albums/AddAlbum';
 import { useDispatch } from 'react-redux';
 import { fetchGenreArtistSet } from './store/data-actions';
 import NotFound from './pages/NotFound';
+import { dataSliceActions } from './store/data-slice';
 
 const Genres    = React.lazy( () => import('./pages/Genres'));
 const Artists   = React.lazy( () => import('./pages/Artists'));
@@ -39,6 +40,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchGenreArtistSet('genres'));
     dispatch(fetchGenreArtistSet('artists'));
+    dispatch(dataSliceActions.cleanCurrAlbum())
   }, [dispatch]);
 
 

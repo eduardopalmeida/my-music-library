@@ -1,17 +1,19 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Artist from './Artist'
 import AddButton from '../../UI/AddButton';
 import classes from '../GAAlist.module.css';
-import { useEffect } from 'react';
 import { fetchGAAData, fetchGenreArtistSet } from '../../store/data-actions';
 import LoadingSpinner from '../../UI/LoadingSpinner';
+import { dataSliceActions } from '../../store/data-slice';
 
 const ArtistList = (props) => {
     const dispatch = useDispatch();
     const data = useSelector(state => state.data.artists)
 
     useEffect(() => {
+        dispatch(dataSliceActions.cleanCurrAlbum());
         dispatch(fetchGAAData('artists'));
         dispatch(fetchGenreArtistSet('artists'));
     }, [dispatch]);        

@@ -1,72 +1,82 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
+import {  useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
-import { addDislike, addLike } from '../../store/data-actions';
+import { Link, useParams } from 'react-router-dom';
+import { addDislike, addLike, fetchAlbumData } from '../../store/data-actions';
 import LoadingSpinner from '../../UI/LoadingSpinner';
 import classes from './AlbumDetail.module.css';
 
 const AlbumDetail = () => {
     const params = useParams();
     const { albumId } = params;
-
-    let albums = useSelector(state => state.data.albums);
-
-    let albumLoaded = albums.find(album => album.id === albumId);
-
-    console.log("albumLoaded : ", albumLoaded);
-
+    
+    let albumLoaded = useSelector(state => state.data.currAlbum);
+    
     const dispatch = useDispatch();
+    
+    const [likes,       setlikes       ] = useState( -1 );
+    const [dislikes,    setDislikes    ] = useState( -1 );
 
     useEffect(() => {
-        if(albumLoaded !== undefined) {
-            setlikes(albumLoaded.like);
-            setdislikes(albumLoaded.dislike);
-        }
-    }, [albumLoaded]);
-
-    const [likes, setlikes]         = useState( 0 );
-    const [dislikes, setdislikes]   = useState( 0 );
-    
+        dispatch(fetchAlbumData(albumId));
+    }, [albumId, dispatch]);    
+ 
     const albumLikeHandler = () => {
+        if(likes === -1) {
+            setlikes(albumLoaded.like + 1)
+            setDislikes(albumLoaded.dislike)
+        }
+        else {
+            setlikes(likes + 1);
+        }
+
         dispatch( addLike(albumId, likes + 1) );
-        setlikes(likes + 1);
+        // dispatch(fetchAlbumData(albumId));
     }
 
     const albumDisikeHandler = () => {
+        if(likes === -1) {
+            setlikes(albumLoaded.like + 1)
+            setDislikes(albumLoaded.dislike)
+        }
+        else {
+            setDislikes(dislikes + 1);
+        }
+
         dispatch( addDislike(albumId, dislikes + 1) );
-        setdislikes(dislikes + 1);
+        // dispatch(fetchAlbumData(albumId));
     }
-    
+
     return (
         <>
             <Suspense fallback={
-                <LoadingSpinner />
-            } >
-                { 
-                    albumLoaded ? 
+                    <LoadingSpinner />
+                } >
+                    {
+                        albumLoaded !== undefined ?
                         <>
                             <div className={classes.album}>
-                                <p>{albumLoaded.title}</p>
-                                <img src={albumLoaded.cover} alt={albumLoaded.title} />
-                                <Link to = {`/artists/${albumLoaded.artist}`} >
-                                    <figcaption>{albumLoaded.artist}</figcaption>
-                                </Link>
-                                <figcaption>{albumLoaded.year}</figcaption>
-                                <Link to = {`/genres/${albumLoaded.genre}`} >
-                                    <figcaption>{albumLoaded.genre}</figcaption>
-                                </Link>
-                                <button 
-                                    className={classes.btnLike} 
-                                    onClick={albumLikeHandler} 
-                                >Like { likes }</button>
-                                <button 
-                                    className={classes.btnDislike} 
-                                    onClick={albumDisikeHandler} 
-                                >Dislike { dislikes }</button>
+                                    <p>{albumLoaded.title}</p>
+                                    <img src={albumLoaded.cover} alt={albumLoaded.title} />
+                                    <Link to = {`/artists/${albumLoaded.artist}`} >
+                                        <figcaption>{albumLoaded.artist}</figcaption>
+                                    </Link>
+                                    <figcaption>{albumLoaded.year}</figcaption>
+                                    <Link to = {`/genres/${albumLoaded.genre}`} >
+                                        <figcaption>{albumLoaded.genre}</figcaption>
+                                    </Link>
+                                    <button 
+                                        className={classes.btnLike} 
+                                        onClick={albumLikeHandler} 
+                                    >Like { likes === -1 ? albumLoaded.like : likes}</button>
+                                    <button 
+                                        className={classes.btnDislike} 
+                                        onClick={albumDisikeHandler} 
+                                    >Dislike { dislikes === -1 ? albumLoaded.dislike : dislikes }</button>
                             </div>
                         </>
-                    : <LoadingSpinner />
-                }
+                        : <LoadingSpinner />
+                    }
             </Suspense>
         </>
     )

@@ -77,7 +77,7 @@ export const fetchAlbumData = (albumId) => {
                 ...album
             }));
 
-            return album;
+            // return album;
         }
         catch(e){
             NotificationManager.error('Could not retrieve album data.' , 'Error!', 5000);
@@ -176,7 +176,6 @@ export const addLike = (albumKey, valor) => {
     return async () => {
 
         const addLikeInc = async () => {
-
             console.log("QUANTOS :: ", valor)
 
             const response = await fetch( FIREBASE_URL +  'music_library/albums/' + albumKey + '/like.json', {

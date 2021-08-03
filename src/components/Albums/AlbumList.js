@@ -1,13 +1,14 @@
-import Album from './Album';
-import { Link, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import AddButton from '../../UI/AddButton';
-import Message from '../../components/Message';
 import { useEffect } from 'react';
-import { fetchGAAData } from '../../store/data-actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import Album from './Album';
+import AddButton from '../../UI/AddButton';
 import classes from '../GAAlist.module.css';
-import { shortText } from '../../utils/extras';
+import { fetchGAAData } from '../../store/data-actions';
 import LoadingSpinner from '../../UI/LoadingSpinner';
+import { dataSliceActions } from '../../store/data-slice';
+import Message from '../../components/Message';
+import { shortText } from '../../utils/extras';
 
 const AlbumList = (props) => {
     const params = useParams();
@@ -24,7 +25,6 @@ const AlbumList = (props) => {
         }
     }
 
-    let checking = true;
     let noAlbumsFound = false;
     let content = null;
 
@@ -55,11 +55,9 @@ const AlbumList = (props) => {
     if(props.albumSource === 2) { 
         filteredData = data.filter( album => album.artist === params.artistId );
 
-        checking = false;
-
         if(filteredData.length === 0) {
             noAlbumsFound = true;
-
+            
             content = (
                 <>
                     <Message text="No Albums found for this Artist, please add some."/>
@@ -67,7 +65,7 @@ const AlbumList = (props) => {
                         linkTo  = {linkToHandler}
                         linkText= {"Add Album"}
                         side = {false}
-                    />
+                        />
                 </>
             )
         }
@@ -77,14 +75,14 @@ const AlbumList = (props) => {
 
     useEffect(() => {
         dispatch(fetchGAAData('albums'));
+        dispatch(dataSliceActions.cleanCurrAlbum())
     }, [dispatch]);
 
-    checking = false;
 
     return (
         <>
             {
-                !checking ? 
+                data ? 
                     <>
                         {noAlbumsFound && content }
                         {!noAlbumsFound && 
@@ -98,15 +96,15 @@ const AlbumList = (props) => {
                                     {
                                         filteredData.map( (album) => (
                                             <Link 
-                                            to  = {`/albums/${album.id}`}
-                                            key = { album.id }
+                                                to  = {`/albums/${album.id}`}
+                                                key = { album.id }
                                             >
                                                 <Album 
                                                     artist = { album.artist                 }
+                                                    cover =  { album.cover                  }
+                                                    genre =  { album.genre                  }
                                                     title =  { shortText(album.title, 20)   }
                                                     year  =  { album.year                   }
-                                                    genre =  { album.genre                  }
-                                                    cover =  { album.cover                  }
                                                     />
                                             </Link>
                                         ))
